@@ -10,16 +10,133 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\追梦女孩">
+      <UniqueIdentifier>{7b63edc1-1927-4721-9442-8ed0d9b4677e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景">
+      <UniqueIdentifier>{4bef820c-1cba-4378-adf8-c117dcf8554e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体">
+      <UniqueIdentifier>{97ff9614-9600-401a-be7a-603ccb3657e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\全局参数">
+      <UniqueIdentifier>{5e4608cd-7d5e-4fe3-a786-cfa3fa0d7552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\工具类">
+      <UniqueIdentifier>{8be71518-17f0-407f-b5e4-29a60a0b9a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\应用代理">
+      <UniqueIdentifier>{e56fd662-ec77-4436-ac47-aee468c6e9f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\工具类\csv文件解析">
+      <UniqueIdentifier>{d0e9a198-5c92-4b30-8401-460a3ffb099f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\工具类\字符串拆分">
+      <UniqueIdentifier>{95e64c5d-f964-45ea-ba99-447144bb3ddb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\工具类\csv文件解析\csv数据对象">
+      <UniqueIdentifier>{f2ad2137-0b9e-42c5-bd39-bbdef8cb8ce8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体\实体基类">
+      <UniqueIdentifier>{0f1364f5-e38b-4d48-88b7-212785f520dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体\玩家">
+      <UniqueIdentifier>{e2062f70-1c6a-43fb-aa05-86de04d2373c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体\怪物">
+      <UniqueIdentifier>{6bc49ddd-6af0-4247-9530-102249a5bc25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体\道具">
+      <UniqueIdentifier>{0e7fe7f1-27bc-49ff-92a8-82bf90788f92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\场景基类">
+      <UniqueIdentifier>{6c52a7e4-4ceb-410e-bd6a-3719b15286e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\场景管理器">
+      <UniqueIdentifier>{c7be7327-e557-4f6c-a27a-28a4674c3870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\开始场景">
+      <UniqueIdentifier>{29f0cf6a-f1c9-4640-9df6-3ca1054e687b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\过渡场景">
+      <UniqueIdentifier>{9b165c9b-0a7a-41b4-941f-4e3028def7fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\开始动画场景">
+      <UniqueIdentifier>{ef95f894-28b6-495e-b679-63e7f01bf026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\关卡场景">
+      <UniqueIdentifier>{41f66f7e-864f-4ae8-aed1-787c99883114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\选择关卡场景">
+      <UniqueIdentifier>{7b08f7ce-37e9-4b54-8a5a-a19f0ca6519f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\场景层">
+      <UniqueIdentifier>{7e9bd3ec-ce1a-440b-a19f-97930555e589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\枚举类">
+      <UniqueIdentifier>{2ac1f016-292a-47c3-a40f-3fe2660543ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\国际化">
+      <UniqueIdentifier>{8a262281-ef44-40cb-8292-875d960e3cc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\关卡过渡场景">
+      <UniqueIdentifier>{91d73f15-69ee-49ce-9639-d9fb053559bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
+      <Filter>src\追梦女孩\应用代理</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="..\Classes\BaseEntity.cpp">
+      <Filter>src\追梦女孩\实体\实体基类</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BaseScene.cpp">
+      <Filter>src\追梦女孩\场景\场景基类</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvData.cpp">
+      <Filter>src\追梦女孩\工具类\csv文件解析\csv数据对象</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CsvUtil.cpp">
+      <Filter>src\追梦女孩\工具类\csv文件解析</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\I18N.cpp">
+      <Filter>src\追梦女孩\国际化</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Monster.cpp">
+      <Filter>src\追梦女孩\实体\怪物</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Player.cpp">
+      <Filter>src\追梦女孩\实体\玩家</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SceneManager.cpp">
+      <Filter>src\追梦女孩\场景\场景管理器</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SelectTollgateScene.cpp">
+      <Filter>src\追梦女孩\场景\选择关卡场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SplashScene.cpp">
+      <Filter>src\追梦女孩\场景\过渡场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartAnimationScene.cpp">
+      <Filter>src\追梦女孩\场景\开始动画场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StartScene.cpp">
+      <Filter>src\追梦女孩\场景\开始场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\StringUtil.cpp">
+      <Filter>src\追梦女孩\工具类\字符串拆分</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateScene.cpp">
+      <Filter>src\追梦女孩\场景\关卡场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ToolsEntity.cpp">
+      <Filter>src\追梦女孩\实体\道具</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateSplashScene.cpp">
+      <Filter>src\追梦女孩\场景\关卡过渡场景</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -27,10 +144,67 @@
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
+      <Filter>src\追梦女孩\应用代理</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
-      <Filter>src</Filter>
+    <ClInclude Include="..\Classes\BaseEntity.h">
+      <Filter>src\追梦女孩\实体\实体基类</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BaseScene.h">
+      <Filter>src\追梦女孩\场景\场景基类</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CsvData.h">
+      <Filter>src\追梦女孩\工具类\csv文件解析\csv数据对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CsvUtil.h">
+      <Filter>src\追梦女孩\工具类\csv文件解析</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EnumStrKey.h">
+      <Filter>src\追梦女孩\枚举类</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GlobalDefine.h">
+      <Filter>src\追梦女孩\全局参数</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\helpLayer.h">
+      <Filter>src\追梦女孩\场景\场景层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\I18N.h">
+      <Filter>src\追梦女孩\国际化</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Monster.h">
+      <Filter>src\追梦女孩\实体\怪物</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Player.h">
+      <Filter>src\追梦女孩\实体\玩家</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SceneManager.h">
+      <Filter>src\追梦女孩\场景\场景管理器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SelectTollgateScene.h">
+      <Filter>src\追梦女孩\场景\选择关卡场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SettingLayer.h">
+      <Filter>src\追梦女孩\场景\场景层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SplashScene.h">
+      <Filter>src\追梦女孩\场景\过渡场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartAnimationScene.h">
+      <Filter>src\追梦女孩\场景\开始动画场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StartScene.h">
+      <Filter>src\追梦女孩\场景\开始场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\StringUtil.h">
+      <Filter>src\追梦女孩\工具类\字符串拆分</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateScene.h">
+      <Filter>src\追梦女孩\场景\关卡场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ToolsEntity.h">
+      <Filter>src\追梦女孩\实体\道具</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateSplashScene.h">
+      <Filter>src\追梦女孩\场景\关卡过渡场景</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
