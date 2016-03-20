@@ -1,0 +1,22 @@
+<UserData Version="3.10.0.0">
+  <Properties>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="SelectTollgateScene.csd" />
+          <FilePathData Path="SplashScene.csd" />
+          <FilePathData Path="StartAnimationScene.csd" />
+          <FilePathData Path="StartScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="StartScene.csd" />
+      </Value>
+    </Item>
+    <Item Key="CocosRecentOperation">
+      <Value ctype="CocosRecentOperation">
+        <LastPublishType Value="Resource" />
+        <IsLastPublish Value="True" />
+        <LastRunType Value="Windows" />
+      </Value>
+    </Item>
+  </Properties>
+</UserData>

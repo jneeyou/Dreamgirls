@@ -1,0 +1,25 @@
+<Solution>
+  <PropertyGroup Name="Dreamgirls" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="startSceneRes">
+          <Image Name="helpBtn_normal.png" />
+          <Image Name="helpBtn_press.png" />
+          <Image Name="princess_last.png" />
+          <Image Name="princess_scene_black.png" />
+          <Image Name="setBtn_normal.png" />
+          <Image Name="setBtn_press.png" />
+          <Image Name="startGameBtn_normal.png" />
+          <Image Name="startGameBtn_press.png" />
+          <Image Name="title.png" />
+        </Folder>
+        <Project Name="SelectTollgateScene.csd" Type="Scene" />
+        <Project Name="SplashScene.csd" Type="Scene" />
+        <Project Name="StartAnimationScene.csd" Type="Scene" />
+        <Project Name="StartScene.csd" Type="Scene" />
+        <Project Name="TollgateScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
