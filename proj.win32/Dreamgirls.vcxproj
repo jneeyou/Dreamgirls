@@ -153,6 +153,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
     <ClCompile Include="..\Classes\I18N.cpp" />
     <ClCompile Include="..\Classes\Monster.cpp" />
+    <ClCompile Include="..\Classes\MonsterManager.cpp" />
     <ClCompile Include="..\Classes\Player.cpp" />
     <ClCompile Include="..\Classes\SceneManager.cpp" />
     <ClCompile Include="..\Classes\SelectTollgateScene.cpp" />
@@ -176,6 +177,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\helpLayer.h" />
     <ClInclude Include="..\Classes\I18N.h" />
     <ClInclude Include="..\Classes\Monster.h" />
+    <ClInclude Include="..\Classes\MonsterManager.h" />
     <ClInclude Include="..\Classes\Player.h" />
     <ClInclude Include="..\Classes\SceneManager.h" />
     <ClInclude Include="..\Classes\SelectTollgateScene.h" />

@@ -1,6 +1,15 @@
 #include "ToolsEntity.h"
 
-bool ToolEntity::init()
+ToolEntity::ToolEntity()
 {
-	return true;
 }
+
+ToolEntity::~ToolEntity()
+{
+}
+
+bool ToolEntity::init(const char * csvFilePath)
+{
+	return false;
+}
+

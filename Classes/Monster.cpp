@@ -1,6 +1,15 @@
 #include "Monster.h"
 
-bool Monster::init()
+
+Monster::Monster()
 {
-	return true;
+}
+
+Monster::~Monster()
+{
+}
+
+bool Monster::init(const char * csvFilePath)
+{
+	return false;
 }

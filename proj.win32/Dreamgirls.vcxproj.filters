@@ -82,6 +82,18 @@
     <Filter Include="src\追梦女孩\场景\关卡过渡场景">
       <UniqueIdentifier>{91d73f15-69ee-49ce-9639-d9fb053559bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\追梦女孩\实体\管理器">
+      <UniqueIdentifier>{5515d598-a85a-479d-ba30-0f750d06c294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体\管理器\玩家管理器">
+      <UniqueIdentifier>{033958b7-951f-4677-8795-c1da453ee358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体\管理器\怪物管理器">
+      <UniqueIdentifier>{85bee615-0609-415f-9cdc-a346132827f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\实体\管理器\道具管理器">
+      <UniqueIdentifier>{49c7dbdb-bb5d-4bdf-9961-71a5d4de368d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -137,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\TollgateSplashScene.cpp">
       <Filter>src\追梦女孩\场景\关卡过渡场景</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MonsterManager.cpp">
+      <Filter>src\追梦女孩\实体\管理器\怪物管理器</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\TollgateSplashScene.h">
       <Filter>src\追梦女孩\场景\关卡过渡场景</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MonsterManager.h">
+      <Filter>src\追梦女孩\实体\管理器\怪物管理器</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
