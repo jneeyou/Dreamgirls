@@ -4,6 +4,9 @@
 
 #include "BaseEntity.h"
 #include "GlobalDefine.h"
+#include "cocostudio\CocoStudio.h"
+
+using namespace cocostudio::timeline;
 
 /************************************************* 玩家类 **********************************************/
 
@@ -18,10 +21,10 @@ public:
 
 	virtual bool init(const char* csvFilePath);
 
-protected:
 	/* 跑 */
-	void onRun();
+	void run();
 
+protected:
 	/* 走 */
 	void onWalk();
 
@@ -44,8 +47,18 @@ protected:
 	void onUseTool();
 
 protected:
+	/* 加载玩家动画 */
+	void loadPlayerAnimation(const std::string fileName);
+
+	/* 设置玩家属性 */
+	void setPlayerProperties(const char* csvFilePath);
+
 	CC_SYNTHESIZE(int, m_curAct, CurAct);						// 当前攻击力
 	CC_SYNTHESIZE(int, m_curWalkDistance, CurWalkDistance);		// 已走距离
+
+private:
+	/* 时间线动画 */
+	ActionTimeline* m_timeline;
 
 };
 

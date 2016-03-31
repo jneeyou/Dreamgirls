@@ -4,6 +4,8 @@
 
 #include "BaseScene.h"
 
+class Player;
+
 /*************************************************** 关卡场景 *******************************************/
 
 class TollgateScene : public BaseScene
@@ -13,6 +15,21 @@ public:
 	CREATE_SCENE_0(TollgateScene, const char);
 
 	virtual bool init(const char* filePath) override;
+
+protected:
+	virtual void setControllerInBgLayer() override;
+
+	void addPlayer(TMXTiledMap* tiledMap);	// 添加玩家
+
+	void moveBg(float dt);	// 移动背景
+
+private:
+	TextBMFont* m_scoreLabel;	// 分数面板
+
+	Player* m_player;	// 玩家对象
+
+	Sprite* m_bottomBg;
+	Sprite* m_topBg;
 };
 
 #endif // !__TOLLGATE_SCENE_H__

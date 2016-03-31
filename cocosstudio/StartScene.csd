@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="startSceneRes/title.png" Plist="" />
+            <FileData Type="Normal" Path="StartSceneRes/title.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="startGameBtn" ActionTag="77145296" Tag="5" IconVisible="False" LeftMargin="390.2046" RightMargin="363.7954" TopMargin="539.7078" BottomMargin="33.2922" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="176" Scale9Height="45" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -27,8 +27,8 @@
             <PreSize X="0.2146" Y="0.1047" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="startSceneRes/startGameBtn_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="startSceneRes/startGameBtn_normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="StartSceneRes/startGameBtn_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="StartSceneRes/startGameBtn_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -42,8 +42,8 @@
             <PreSize X="0.1542" Y="0.1141" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="startSceneRes/helpBtn_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="startSceneRes/helpBtn_normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="StartSceneRes/helpBtn_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="StartSceneRes/helpBtn_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -57,8 +57,8 @@
             <PreSize X="0.1531" Y="0.1141" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="startSceneRes/setBtn_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="startSceneRes/setBtn_normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="StartSceneRes/setBtn_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="StartSceneRes/setBtn_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

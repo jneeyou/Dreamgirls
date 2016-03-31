@@ -3,8 +3,7 @@
 #define __MONSTER_MANAGER_H__
 
 #include "cocos2d.h"
-
-class Monster;
+#include "Monster.h"
 
 /************************************************************************** 怪物管理器 ****************************************************************/
 
@@ -17,7 +16,7 @@ public:
 	virtual void init();
 
 	/* 获得怪物列表 */
-	Monster* getMonsterList();
+	cocos2d::Vector<Monster*>& getMonsterList();
 
 private:
 	cocos2d::Vector<Monster*> m_monsterList;	// 怪物列表

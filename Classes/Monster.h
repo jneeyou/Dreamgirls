@@ -22,6 +22,4 @@ protected:
 
 };
 
-
-
 #endif // !__MONSTER_H__

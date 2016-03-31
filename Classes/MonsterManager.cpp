@@ -2,6 +2,7 @@
 
 MonsterManager::MonsterManager()
 {
+	m_monsterList.clear();
 }
 
 MonsterManager::~MonsterManager()
@@ -12,7 +13,7 @@ void MonsterManager::init()
 {
 }
 
-Monster * MonsterManager::getMonsterList()
+cocos2d::Vector<Monster*>& MonsterManager::getMonsterList()
 {
-	return nullptr;
+	return m_monsterList;
 }

@@ -1,32 +1,91 @@
 <GameFile>
-  <PropertyGroup Name="TollgateScene" Type="Scene" ID="df097dde-7cc4-42ba-9dbf-18668f52e5c8" Version="3.10.0.0" />
+  <PropertyGroup Name="TollgateScene" Type="Scene" ID="8833a4f4-c32e-4033-b66e-9bde9c8073f7" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Scene" Tag="3" ctype="GameNodeObjectData">
+      <ObjectData Name="Scene" Tag="6" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="princess_scene_black_1" ActionTag="1951938564" Tag="9" IconVisible="False" LeftMargin="-99.9999" RightMargin="-100.0001" TopMargin="9.5000" BottomMargin="9.5000" ctype="SpriteObjectData">
-            <Size X="1160.0000" Y="621.0000" />
+          <AbstractNodeData Name="bg" ActionTag="-1727689073" Tag="8" IconVisible="False" LeftMargin="-17.3545" RightMargin="-13.6455" TopMargin="9.4999" BottomMargin="9.5002" ctype="SpriteObjectData">
+            <Size X="991.0000" Y="621.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="480.0001" Y="320.0000" />
-            <Scale ScaleX="0.8261" ScaleY="1.0565" />
+            <Position X="478.1455" Y="320.0002" />
+            <Scale ScaleX="0.9701" ScaleY="1.0478" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.2083" Y="0.9703" />
-            <FileData Type="Normal" Path="startSceneRes/princess_scene_black.png" Plist="" />
+            <PrePosition X="0.4981" Y="0.5000" />
+            <PreSize X="1.0323" Y="0.9703" />
+            <FileData Type="Normal" Path="princess_scene_temple_01.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="princess_last_2" ActionTag="1001403675" Tag="10" IconVisible="False" LeftMargin="409.5002" RightMargin="470.4998" TopMargin="316.1437" BottomMargin="241.8563" ctype="SpriteObjectData">
-            <Size X="80.0000" Y="82.0000" />
+          <AbstractNodeData Name="leftMoveBtn" ActionTag="-2108036893" Tag="9" IconVisible="False" LeftMargin="-2.1689" RightMargin="898.1689" TopMargin="564.2412" BottomMargin="11.7588" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="449.5002" Y="282.8563" />
+            <Position X="29.8311" Y="43.7588" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4682" Y="0.4420" />
-            <PreSize X="0.0833" Y="0.1281" />
-            <FileData Type="Normal" Path="startSceneRes/princess_last.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
+            <PrePosition X="0.0311" Y="0.0684" />
+            <PreSize X="0.0667" Y="0.1000" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="ui_tollgate_left_btn_press .png" Plist="" />
+            <NormalFileData Type="Normal" Path="ui_tollgate_left_btn_normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="rightMoveBtn" ActionTag="-1485866899" Tag="10" IconVisible="False" LeftMargin="77.5581" RightMargin="818.4419" TopMargin="564.9493" BottomMargin="11.0506" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="64.0000" Y="64.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="109.5581" Y="43.0506" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1141" Y="0.0673" />
+            <PreSize X="0.0667" Y="0.1000" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="ui_tollgate_right_btn_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="ui_tollgate_right_btn_normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="jumpBtn" ActionTag="-484434395" Tag="11" IconVisible="False" LeftMargin="888.6606" RightMargin="5.3394" TopMargin="558.6783" BottomMargin="15.3216" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="36" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="66.0000" Y="66.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="921.6606" Y="48.3216" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9601" Y="0.0755" />
+            <PreSize X="0.0688" Y="0.1031" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="ui_tollgate_jump_btn_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="ui_tollgate_jump_btn_normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="pauseBtn" ActionTag="295159403" Tag="12" IconVisible="False" LeftMargin="882.5150" RightMargin="-4.5150" TopMargin="-2.7021" BottomMargin="564.7021" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="52" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="82.0000" Y="78.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="923.5150" Y="603.7021" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9620" Y="0.9433" />
+            <PreSize X="0.0854" Y="0.1219" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="princess_button_stops.png" Plist="" />
+            <NormalFileData Type="Normal" Path="princess_button_stop.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="scoreLabel" ActionTag="-1867454392" Tag="15" IconVisible="False" LeftMargin="9.6213" RightMargin="784.3787" TopMargin="5.2980" BottomMargin="572.7020" LabelText="Score: 0" ctype="TextBMFontObjectData">
+            <Size X="166.0000" Y="62.0000" />
+            <AnchorPoint ScaleY="1.0000" />
+            <Position X="9.6213" Y="634.7020" />
+            <Scale ScaleX="0.8000" ScaleY="0.8000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0100" Y="0.9917" />
+            <PreSize X="0.1729" Y="0.0969" />
+            <LabelBMFontFile_CNB Type="Normal" Path="futura-48.fnt" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

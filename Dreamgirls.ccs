@@ -3,7 +3,20 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Folder Name="startSceneRes">
+        <Folder Name="GirlRes">
+          <Image Name="body.png" />
+          <Image Name="foot1.png" />
+          <Image Name="foot2.png" />
+          <Image Name="girl.png" />
+          <Image Name="hand1.png" />
+          <Image Name="hand2.png" />
+          <Image Name="head.png" />
+          <Image Name="largefoot.png" />
+          <Image Name="largehand.png" />
+          <Image Name="rhand.png" />
+          <Image Name="sfoot.png" />
+        </Folder>
+        <Folder Name="StartSceneRes">
           <Image Name="helpBtn_normal.png" />
           <Image Name="helpBtn_press.png" />
           <Image Name="princess_last.png" />
@@ -14,11 +27,25 @@
           <Image Name="startGameBtn_press.png" />
           <Image Name="title.png" />
         </Folder>
+        <Folder Name="TollgateSceneRes" />
+        <Fnt Name="futura-48.fnt" />
+        <Project Name="girl.csd" Type="Skeleton" />
+        <PlistInfo Name="GirlResource.csi" Type="Plist" />
+        <Image Name="princess_button_stop.png" />
+        <Image Name="princess_button_stops.png" />
+        <Image Name="princess_scene_temple_01.png" />
         <Project Name="SelectTollgateScene.csd" Type="Scene" />
+        <Project Name="Skeleton.csd" Type="Skeleton" />
         <Project Name="SplashScene.csd" Type="Scene" />
         <Project Name="StartAnimationScene.csd" Type="Scene" />
         <Project Name="StartScene.csd" Type="Scene" />
         <Project Name="TollgateScene.csd" Type="Scene" />
+        <Image Name="ui_tollgate_jump_btn_normal.png" />
+        <Image Name="ui_tollgate_jump_btn_press.png" />
+        <Image Name="ui_tollgate_left_btn_normal.png" />
+        <Image Name="ui_tollgate_left_btn_press .png" />
+        <Image Name="ui_tollgate_right_btn_normal.png" />
+        <Image Name="ui_tollgate_right_btn_press.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

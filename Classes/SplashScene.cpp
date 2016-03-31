@@ -2,7 +2,6 @@
 #include "SceneManager.h"
 
 
-
 bool SplashScene::init(const char * filePath)
 {
 	if (!BaseScene::init(filePath))
@@ -31,13 +30,13 @@ bool SplashScene::init(const char * filePath)
 
 void SplashScene::loadPictureResFiles()
 {
-	
-	LOAD_IMAGE_ASYNC("", SplashScene::imageLoadCallFunc);
+	// 异步加载图片
+	LOAD_IMAGE_ASYNC(PATH_GIRLS_RES_PICTURE_FILE, SplashScene::imageLoadCallFunc);
 }
 
 void SplashScene::loadAudioResFiles()
 {
-	AUDIOENGINE->preloadBackgroundMusic("");
+	AUDIOENGINE->preloadBackgroundMusic(PATH_BGM_SOUND);
 }
 
 void SplashScene::initUserData()
@@ -47,10 +46,11 @@ void SplashScene::initUserData()
 
 void SplashScene::imageLoadCallFunc(Texture2D * texture)
 {
+	/* 根据图片载入顺序，加载相应plist文件 */
 	switch (m_iNumOfLoad++)
 	{
 	case 0:
-		SpriteFrameCache::getInstance()->addSpriteFramesWithFile("pnglist/startGame.plist", texture);
+		SpriteFrameCache::getInstance()->addSpriteFramesWithFile(PATH_GIRLS_RES_PLIST_FILE, texture);
 		this->scheduleOnce(schedule_selector(SplashScene::gotoNextScene),1.0f);
 	default:
 		break;

@@ -3,12 +3,11 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="SelectTollgateScene.csd" />
-          <FilePathData Path="SplashScene.csd" />
+          <FilePathData Path="TollgateScene.csd" />
+          <FilePathData Path="girl.csd" />
           <FilePathData Path="StartAnimationScene.csd" />
-          <FilePathData Path="StartScene.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="StartScene.csd" />
+        <ActiveDocument Path="TollgateScene.csd" />
       </Value>
     </Item>
     <Item Key="CocosRecentOperation">

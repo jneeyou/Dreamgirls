@@ -1,5 +1,7 @@
 #include "StartScene.h"
 #include "SceneManager.h"
+#include "GlobalDefine.h"
+
 
 StartScene::StartScene()
 {
@@ -15,6 +17,9 @@ bool StartScene::init(const char* filePath)
 	{
 		return false;
 	}
+
+	/* 播放音乐 */
+	PLAY_MUSIC(PATH_BGM_SOUND, true);
 
 
 	return true;
@@ -36,7 +41,7 @@ void StartScene::setControllerInBgLayer()
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-
+			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
@@ -64,7 +69,7 @@ void StartScene::setControllerInBgLayer()
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-
+			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
@@ -79,7 +84,7 @@ void StartScene::setControllerInBgLayer()
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-
+			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
 		}
 
 		if (type == Widget::TouchEventType::ENDED)

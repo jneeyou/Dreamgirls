@@ -63,8 +63,13 @@ Value CsvUtil::getValue(int iRow, int iCol, const char * csvFilePath)
 		csvData = m_CsvMap.at(csvFilePath);
 	}
 
+	if (csvData->getSingleLineData(0).at(0).asString() != "")
+	{
+		iCol -= 1;
+	}
+
 	ValueVector rowVector = csvData->getSingleLineData(iRow);	/* 取出iRow行数据 */
-	if (rowVector.size() == 0)	/* 取出iCo列数据 */
+	if (rowVector.size() == 0 || iCol >= rowVector.size() || iCol < 0)	/* 取出iCo列数据 */
 	{
 		return Value("");
 	}
@@ -149,6 +154,12 @@ const int CsvUtil::findValueInWithLine(const char * chValue, int iValueCol, cons
 	}
 
 	Size rowColNum = csvData->getRowColNum();
+
+	if (rowColNum.height <= iValueCol)
+	{
+		return NOT_FIND;
+	}
+
 	for (size_t i = 0; i < rowColNum.width; i++)
 	{
 		if (!csvData->getSingleLineData(i).at(iValueCol).asString().compare(chValue))

@@ -11,5 +11,5 @@ Monster::~Monster()
 
 bool Monster::init(const char * csvFilePath)
 {
-	return false;
+	return true;
 }

@@ -20,6 +20,7 @@ public:
 
 protected:
 	virtual void setControllerInBgLayer() override;
+
 };
 
 #endif // !__START_SCENE_H__

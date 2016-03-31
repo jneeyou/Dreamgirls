@@ -105,6 +105,11 @@ public: static _TYPE_* getInstance() {\
 #define  SOUND_EFFECT_VOL	"soundEffectVol"	//音效大小
 #define BGM_VOL		"bgmVol"					// 背景音乐大小
 
+/* 音乐文件路径 */
+#define PATH_BGM_SOUND		    "sound/bgm.mp3"
+#define PATH_BUTTON_SOUND		"sound/button.mp3"
+#define PATH_JUMP_SOUND			"sound/jump1.mp3"
+#define PATH_RUN_SOUND			"sound/run.mp3"
 
 
 /* ----------------------------------- 存取数据 ------------------------------------------------ */
@@ -112,10 +117,12 @@ public: static _TYPE_* getInstance() {\
 /* 保存数据 */
 #define setBoolToXML(key,value) UserDefault::getInstance()->setBoolForKey(key,value)
 #define setFloatToXML(key,value) UserDefault::getInstance()->setFloatForKey(key,value)
+#define setIntToXML(key,value) UserDefault::getInstance()->setIntegerForKey(key,value)
 
 /* 获取数据 */
 #define getBoolFromXML(key,value) UserDefault::getInstance()->getBoolForKey(key, value)
 #define getFloatFromXML(key,value) UserDefault::getInstance()->getFloatForKey(key,value)
+#define getIntFromXML(key,value) UserDefault::getInstance()->getIntegerForKey(key,value)
 
 
 /* ---------------------------------- 用户信息 ----------------------------------------------- */
@@ -125,12 +132,18 @@ public: static _TYPE_* getInstance() {\
 #define USER_SCORE	"userscore"
 
 #define USER_FIRST_ENTER	"userFirstEnter"	//用户第一次进入
+#define CURRENT_TOLLGATE	"currentTollgate"	// 当前关卡
 
-
-/* --------------------------------- 文件路径 ------------------------------------------------*/
+/* -----------------------------------文件路径 ------------------------------------------------*/
 
 /* 全局公用字符文件 */
-#define PATH_I18N_PUBLIC	"i18n/public.csv"
+#define PATH_I18N_PUBLIC	"csv/public.csv"
+
+/* 怪物配置文件 */
+#define PATH_CSV_MONSTER	"csv/monster.csv"
+
+/* 玩家配置文件 */
+#define PATH_CSV_PLAYER		"csv/player.csv"
 
 /* 输入框背景 */
 #define PATH_SPRITE_TEXTFIELD_BG "sprite/register.png"
@@ -145,6 +158,14 @@ public: static _TYPE_* getInstance() {\
 #define  RADIO_BTN_CHECK	"sprite/Read_ChaeckBox.png"
 #define  RADIO_BTN_NORMAL	"sprite/Read_CheckBoxBg.png"
 
+/* plist 文件 */
+#define PATH_GIRLS_RES_PLIST_FILE		"pnglist/GirlResource.plist"
+
+/*plist对应图片 */
+#define PATH_GIRLS_RES_PICTURE_FILE		"pnglist/GirlResource.png"
+
+/* 动画文件 */
+#define PATH_PLAYER_AIMATION_FILE		"girl.csb"
 
 
 /* ----------------------------------- csb场景文件名 ---------------------------------------- */
@@ -165,8 +186,12 @@ public: static _TYPE_* getInstance() {\
 #define START_SCENE_SETTING_BTN			"settingBtn"
 
 /* 关卡场景 */
-
-
+#define TOLLGATE_SCENE_LEFT_MOVE_BTN	"leftMoveBtn"
+#define TOLLGATE_SCENE_RIGHT_MOVE_BTN	"rightMoveBtn"
+#define TOLLGATE_SCENE_JUMP_BTN			"jumpBtn"
+#define TOLLGATE_SCENE_PAUSE_BTN		"pauseBtn"
+#define TOLLGATE_SCENE_SCORE_LABEL		"scoreLabel"
+#define TOLLGATE_SCENE_BG_LAYER_1		"bg"
 
 /* -------------------------------------------- 消息定义 ---------------------------------- */
 

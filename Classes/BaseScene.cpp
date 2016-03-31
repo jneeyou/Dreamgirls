@@ -54,10 +54,7 @@ void BaseScene::setBgLayerByFile(const char * filePath)
 
 void BaseScene::setControllerInBgLayer()
 {
-	if (bgLayer)
-	{
-		return;
-	}
+	CC_ASSERT(bgLayer);
 
 	/* ÉèÖÃ¿Ø¼þ */
 }
