@@ -1,20 +1,36 @@
 <UserData Version="3.10.0.0">
   <Properties>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="TollgateScene.csd" />
-          <FilePathData Path="girl.csd" />
-          <FilePathData Path="StartAnimationScene.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="TollgateScene.csd" />
+    <Item Key="PackageParamsKey">
+      <Value ctype="PackageParams">
+        <LuaIsEncrypt Value="False" />
+        <LuaEncryptKey Value="" />
+        <LuaEncryptSign Value="" />
+        <Android_PackageName Value="org.cocos.Dreamgirls" />
+        <AndroidkeyStore Value="D:\Documents\Cocos\CocosProjects\publish\jneeyou.keystore" />
+        <AndroidVersion Value="android-20" />
+        <iOS_Target Value="Dreamgirls-mobile" />
+        <iOS_BundleID Value="" />
+        <Platform Value="Android" />
+        <RunPlatform Value="None" />
+        <FrameworkVersion Value="cocos2d-x-3.10" />
+        <IsDebugKeystore Value="False" />
+        <KeystorePassword Value="wan1314520" />
+        <KeystoreAliasName Value="jneeyou" />
+        <KeystoreAliasPassword Value="wan1314520" />
+        <EnableSourceMap Value="False" />
+        <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
-        <IsLastPublish Value="True" />
+        <IsLastPublish Value="False" />
         <LastRunType Value="Windows" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>

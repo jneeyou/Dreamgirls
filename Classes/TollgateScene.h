@@ -16,6 +16,10 @@ public:
 
 	virtual bool init(const char* filePath) override;
 
+	virtual bool onTouchBegan(Touch *touch, Event *unused_event);
+	virtual void onTouchMoved(Touch *touch, Event *unused_event);
+	virtual void onTouchEnded(Touch *touch, Event *unused_event);
+
 protected:
 	virtual void setControllerInBgLayer() override;
 
@@ -30,6 +34,10 @@ private:
 
 	Sprite* m_bottomBg;
 	Sprite* m_topBg;
+
+	Button* rightMoveBtn;
+	Button* jumpBtn;
+	Button* pauseBtn;
 };
 
 #endif // !__TOLLGATE_SCENE_H__

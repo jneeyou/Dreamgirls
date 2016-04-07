@@ -31,7 +31,7 @@ bool SplashScene::init(const char * filePath)
 void SplashScene::loadPictureResFiles()
 {
 	// Òì²½¼ÓÔØÍ¼Æ¬
-	LOAD_IMAGE_ASYNC(PATH_GIRLS_RES_PICTURE_FILE, SplashScene::imageLoadCallFunc);
+	LOAD_IMAGE_ASYNC(PATH_LEVEL_RES_PICTURE_FILE, SplashScene::imageLoadCallFunc);
 }
 
 void SplashScene::loadAudioResFiles()
@@ -41,7 +41,12 @@ void SplashScene::loadAudioResFiles()
 
 void SplashScene::initUserData()
 {
+	setBoolToXML(USER_FIRST_ENTER, true);
+	setIntToXML(CURRENT_TOLLGATE, 2);
+	setIntToXML(MAX_TOLLGATE_NUM, 10);
+	setIntToXML(UNLOCK_TOLLGATE_NUM, 5);
 
+	USERDEFAULT->flush();
 }
 
 void SplashScene::imageLoadCallFunc(Texture2D * texture)
@@ -50,8 +55,8 @@ void SplashScene::imageLoadCallFunc(Texture2D * texture)
 	switch (m_iNumOfLoad++)
 	{
 	case 0:
-		SpriteFrameCache::getInstance()->addSpriteFramesWithFile(PATH_GIRLS_RES_PLIST_FILE, texture);
-		this->scheduleOnce(schedule_selector(SplashScene::gotoNextScene),1.0f);
+		SpriteFrameCache::getInstance()->addSpriteFramesWithFile(PATH_LEVEL_RES_PLIST_FILE, texture);
+		this->scheduleOnce(schedule_selector(SplashScene::gotoNextScene), 1.0f);
 	default:
 		break;
 	}

@@ -6,48 +6,33 @@
       <ObjectData Name="Scene" Tag="6" ctype="GameNodeObjectData">
         <Size X="960.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="-1727689073" Tag="8" IconVisible="False" LeftMargin="-17.3545" RightMargin="-13.6455" TopMargin="9.4999" BottomMargin="9.5002" ctype="SpriteObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-1727689073" Tag="8" IconVisible="False" LeftMargin="-15.5000" RightMargin="-15.5000" TopMargin="9.5000" BottomMargin="9.5000" ctype="SpriteObjectData">
             <Size X="991.0000" Y="621.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="478.1455" Y="320.0002" />
+            <Position X="480.0000" Y="320.0000" />
             <Scale ScaleX="0.9701" ScaleY="1.0478" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4981" Y="0.5000" />
+            <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0323" Y="0.9703" />
-            <FileData Type="Normal" Path="princess_scene_temple_01.png" Plist="" />
+            <FileData Type="Normal" Path="TollgateSceneRes/princess_scene_temple_01.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="leftMoveBtn" ActionTag="-2108036893" Tag="9" IconVisible="False" LeftMargin="-2.1689" RightMargin="898.1689" TopMargin="564.2412" BottomMargin="11.7588" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="rightMoveBtn" ActionTag="-1485866899" Tag="10" IconVisible="False" LeftMargin="20.2293" RightMargin="875.7707" TopMargin="568.4239" BottomMargin="7.5761" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="64.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="29.8311" Y="43.7588" />
+            <Position X="52.2293" Y="39.5761" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0311" Y="0.0684" />
+            <PrePosition X="0.0544" Y="0.0618" />
             <PreSize X="0.0667" Y="0.1000" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="ui_tollgate_left_btn_press .png" Plist="" />
-            <NormalFileData Type="Normal" Path="ui_tollgate_left_btn_normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="TollgateSceneRes/ui_tollgate_right_btn_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="TollgateSceneRes/ui_tollgate_right_btn_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="rightMoveBtn" ActionTag="-1485866899" Tag="10" IconVisible="False" LeftMargin="77.5581" RightMargin="818.4419" TopMargin="564.9493" BottomMargin="11.0506" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="64.0000" Y="64.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="109.5581" Y="43.0506" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1141" Y="0.0673" />
-            <PreSize X="0.0667" Y="0.1000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="ui_tollgate_right_btn_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="ui_tollgate_right_btn_normal.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="jumpBtn" ActionTag="-484434395" Tag="11" IconVisible="False" LeftMargin="888.6606" RightMargin="5.3394" TopMargin="558.6783" BottomMargin="15.3216" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="36" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="jumpBtn" ActionTag="-484434395" Tag="11" IconVisible="False" LeftMargin="888.6606" RightMargin="5.3394" TopMargin="558.6784" BottomMargin="15.3216" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="36" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="66.0000" Y="66.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="921.6606" Y="48.3216" />
@@ -57,8 +42,8 @@
             <PreSize X="0.0688" Y="0.1031" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="ui_tollgate_jump_btn_press.png" Plist="" />
-            <NormalFileData Type="Normal" Path="ui_tollgate_jump_btn_normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="TollgateSceneRes/ui_tollgate_jump_btn_press.png" Plist="" />
+            <NormalFileData Type="Normal" Path="TollgateSceneRes/ui_tollgate_jump_btn_normal.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -72,8 +57,8 @@
             <PreSize X="0.0854" Y="0.1219" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="princess_button_stops.png" Plist="" />
-            <NormalFileData Type="Normal" Path="princess_button_stop.png" Plist="" />
+            <PressedFileData Type="Normal" Path="TollgateSceneRes/princess_button_stops.png" Plist="" />
+            <NormalFileData Type="Normal" Path="TollgateSceneRes/princess_button_stop.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

@@ -17,7 +17,7 @@ class BaseScene : public Layer
 {
 public:
 	BaseScene();
-	~BaseScene();
+	virtual ~BaseScene();
 
 	virtual bool init();
 	virtual bool init(const char* filePath);

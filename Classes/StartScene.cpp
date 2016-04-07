@@ -31,23 +31,26 @@ void StartScene::setControllerInBgLayer()
 	BaseScene::setControllerInBgLayer();
 
 	/* 获取控件 */
-	auto startGameBtn = dynamic_cast<Button*>(bgLayer->getChildByName(START_SCENE_START_GAME_BTN));
-	auto helpBtn = dynamic_cast<Button*>(bgLayer->getChildByName(START_SCENE_HELP_BTN));
-	auto settingBtn = dynamic_cast<Button*>(bgLayer->getChildByName(START_SCENE_SETTING_BTN));
+	startGameBtn = dynamic_cast<Button*>(bgLayer->getChildByName(START_SCENE_START_GAME_BTN));
+	helpBtn = dynamic_cast<Button*>(bgLayer->getChildByName(START_SCENE_HELP_BTN));
+	settingBtn = dynamic_cast<Button*>(bgLayer->getChildByName(START_SCENE_SETTING_BTN));
 
 	/* 设置监听 */
-	startGameBtn->addTouchEventListener([](Ref*, Widget::TouchEventType type) {
+	startGameBtn->addTouchEventListener([&](Ref*, Widget::TouchEventType type) {
 
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			startGameBtn->runAction(ScaleTo::create(0.1f, 1.1f));
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			/* 第一次进入跳到开始动画场景，否则跳到关卡场景 */
 			bool ret = getBoolFromXML(USER_FIRST_ENTER, false);
+			startGameBtn->runAction(ScaleTo::create(0.1f, 1.0f));
+			this->runAction(DelayTime::create(0.1f));
 
 			if (!ret)	//第一次进入
 			{
@@ -58,38 +61,42 @@ void StartScene::setControllerInBgLayer()
 			}
 			else		//非第一次
 			{
-				SceneManager::getInstance()->changeCurSceneType(SceneType::en_Tollgate_Scene);
+				SceneManager::getInstance()->changeCurSceneType(SceneType::en_Select_Tollgate_Scene);
 			}
 		}
 		
 	});
 
-	helpBtn->addTouchEventListener([](Ref*, Widget::TouchEventType type) {
+	helpBtn->addTouchEventListener([&](Ref*, Widget::TouchEventType type) {
 
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			helpBtn->runAction(ScaleTo::create(0.1f, 1.1f));
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			/* 弹出帮助层 */
+			helpBtn->runAction(ScaleTo::create(0.1f, 1.0f));
 		}
 
 	});
 
-	settingBtn->addTouchEventListener([](Ref*, Widget::TouchEventType type) {
+	settingBtn->addTouchEventListener([&](Ref*, Widget::TouchEventType type) {
 
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			settingBtn->runAction(ScaleTo::create(0.1f, 1.1f));
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			/* 弹出设置层 */
+			settingBtn->runAction(ScaleTo::create(0.1f, 1.0f));
 		}
 
 	});

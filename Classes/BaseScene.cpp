@@ -41,6 +41,11 @@ bool BaseScene::init(const char * filePath)
 
 void BaseScene::setBgLayerByFile(const char * filePath)
 {
+	if (bgLayer != nullptr)
+	{
+		return;
+	}
+
 	/* 加载csb场景文件 */
 	bgLayer = CSLoader::createNode(filePath);
 	if (bgLayer)

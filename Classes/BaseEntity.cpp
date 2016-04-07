@@ -13,11 +13,12 @@ BaseEntity::BaseEntity()
 	m_level = 0;
 	m_defense = 0;
 
-	m_entityStatus = EntityStatus::en_Sleep_Status;
+	m_entityStatus = EntityStatus::en_Stop_Status;
 }
 
 BaseEntity::~BaseEntity()
 {
+	NOTIFY->removeAllObservers(this);
 }
 
 bool BaseEntity::init()
@@ -42,16 +43,15 @@ SkeletonNode * BaseEntity::getSprite()
 	return m_sprite;
 }
 
-void BaseEntity::movePos()
+void BaseEntity::movePos(float dt, float dis)
 {
-	return ;
 }
 
 void BaseEntity::onBindSprite()
 {
 	auto size = m_sprite->getContentSize();
 	this->setContentSize(size);
-	
+
 }
 
 void BaseEntity::onDead()

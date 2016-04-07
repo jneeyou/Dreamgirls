@@ -108,8 +108,11 @@ public: static _TYPE_* getInstance() {\
 /* 音乐文件路径 */
 #define PATH_BGM_SOUND		    "sound/bgm.mp3"
 #define PATH_BUTTON_SOUND		"sound/button.mp3"
-#define PATH_JUMP_SOUND			"sound/jump1.mp3"
+#define PATH_JUMP_SOUND			"sound/jump.mp3"
 #define PATH_RUN_SOUND			"sound/run.mp3"
+#define PATH_SLID_SOUND			"sound/sliding.mp3"
+#define PATH_ENTER_SOUND		"sound/enter.mp3"
+#define PATH_CEASH_SOUND		"sound/crash.mp3"
 
 
 /* ----------------------------------- 存取数据 ------------------------------------------------ */
@@ -131,8 +134,10 @@ public: static _TYPE_* getInstance() {\
 #define USER_PWD	"userpwd"
 #define USER_SCORE	"userscore"
 
-#define USER_FIRST_ENTER	"userFirstEnter"	//用户第一次进入
-#define CURRENT_TOLLGATE	"currentTollgate"	// 当前关卡
+#define USER_FIRST_ENTER	"userFirstEnter"		// 用户第一次进入
+#define CURRENT_TOLLGATE	"currentTollgate"		// 当前关卡
+#define MAX_TOLLGATE_NUM	"MaxTollgateNumber"		// 最大关卡数
+#define UNLOCK_TOLLGATE_NUM	"UnlockTollgateNumber"	// 解锁关卡数
 
 /* -----------------------------------文件路径 ------------------------------------------------*/
 
@@ -159,9 +164,11 @@ public: static _TYPE_* getInstance() {\
 #define  RADIO_BTN_NORMAL	"sprite/Read_CheckBoxBg.png"
 
 /* plist 文件 */
+#define PATH_LEVEL_RES_PLIST_FILE		"pnglist/tollgate_map.plist"
 #define PATH_GIRLS_RES_PLIST_FILE		"pnglist/GirlResource.plist"
 
 /*plist对应图片 */
+#define PATH_LEVEL_RES_PICTURE_FILE		"pnglist/tollgate_map.png"
 #define PATH_GIRLS_RES_PICTURE_FILE		"pnglist/GirlResource.png"
 
 /* 动画文件 */

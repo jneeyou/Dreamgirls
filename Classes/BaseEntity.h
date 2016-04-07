@@ -25,14 +25,14 @@ public:
 		en_Restore_Status,	// »Ö¸´×´Ì¬
 		en_Fly_Status,		// ·ÉÐÐ×´Ì¬
 		en_Boat_Status,		// ×ø´¬×´Ì¬
-		en_Sleep_Status,	// ÐÝÃß×´Ì¬
+		en_Stop_Status,	    // Í£Ö¹×´Ì¬
 		en_Dead_Status,		// ËÀÍö×´Ì¬
 
 	};	// EntityStatus
 
 public:
 	BaseEntity();
-	~BaseEntity();
+	virtual ~BaseEntity();
 
 	virtual bool init();
 
@@ -47,7 +47,7 @@ public:
 
 protected:
 	/* ÒÆ¶¯Î»ÖÃ */
-	virtual void movePos();
+	virtual void movePos(float dt, float dis);
 
 	/* °ó¶¨¾«Áé */
 	virtual void onBindSprite();

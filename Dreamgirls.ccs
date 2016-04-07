@@ -16,7 +16,26 @@
           <Image Name="rhand.png" />
           <Image Name="sfoot.png" />
         </Folder>
+        <Folder Name="SltTollgateSceneRes">
+          <Image Name="bg_large.png" />
+          <Image Name="bg_small.png" />
+          <Image Name="home.png" />
+          <Image Name="lv_1.png" />
+          <Image Name="lv_10.png" />
+          <Image Name="lv_2.png" />
+          <Image Name="lv_3.png" />
+          <Image Name="lv_4.png" />
+          <Image Name="lv_5.png" />
+          <Image Name="lv_6.png" />
+          <Image Name="lv_7.png" />
+          <Image Name="lv_8.png" />
+          <Image Name="lv_9.png" />
+          <Image Name="slt_bar_lock.png" />
+          <Image Name="slt_bar_no.png" />
+          <Image Name="slt_bar_yes.png" />
+        </Folder>
         <Folder Name="StartSceneRes">
+          <Image Name="bg.png" />
           <Image Name="helpBtn_normal.png" />
           <Image Name="helpBtn_press.png" />
           <Image Name="princess_last.png" />
@@ -27,25 +46,34 @@
           <Image Name="startGameBtn_press.png" />
           <Image Name="title.png" />
         </Folder>
-        <Folder Name="TollgateSceneRes" />
+        <Folder Name="TollgateSceneRes">
+          <Image Name="princess_button_stop.png" />
+          <Image Name="princess_button_stops.png" />
+          <Image Name="princess_scene_forest_11.png" />
+          <Image Name="princess_scene_lake_01.png" />
+          <Image Name="princess_scene_temple_01.png" />
+          <Image Name="princess_scene_temple_011.png" />
+          <Image Name="ui_tollgate_jump_btn_normal.png" />
+          <Image Name="ui_tollgate_jump_btn_press.png" />
+          <Image Name="ui_tollgate_left_btn_normal.png" />
+          <Image Name="ui_tollgate_left_btn_press .png" />
+          <Image Name="ui_tollgate_right_btn_normal.png" />
+          <Image Name="ui_tollgate_right_btn_press.png" />
+        </Folder>
         <Fnt Name="futura-48.fnt" />
         <Project Name="girl.csd" Type="Skeleton" />
         <PlistInfo Name="GirlResource.csi" Type="Plist" />
-        <Image Name="princess_button_stop.png" />
-        <Image Name="princess_button_stops.png" />
-        <Image Name="princess_scene_temple_01.png" />
         <Project Name="SelectTollgateScene.csd" Type="Scene" />
         <Project Name="Skeleton.csd" Type="Skeleton" />
         <Project Name="SplashScene.csd" Type="Scene" />
         <Project Name="StartAnimationScene.csd" Type="Scene" />
         <Project Name="StartScene.csd" Type="Scene" />
+        <PlistInfo Name="tollgate_map.csi" Type="Plist" />
         <Project Name="TollgateScene.csd" Type="Scene" />
-        <Image Name="ui_tollgate_jump_btn_normal.png" />
-        <Image Name="ui_tollgate_jump_btn_press.png" />
-        <Image Name="ui_tollgate_left_btn_normal.png" />
-        <Image Name="ui_tollgate_left_btn_press .png" />
-        <Image Name="ui_tollgate_right_btn_normal.png" />
-        <Image Name="ui_tollgate_right_btn_press.png" />
+        <Image Name="ui_button_home_no.png" />
+        <Image Name="ui_button_home_yes.png" />
+        <Image Name="ui_button_setting_no.png" />
+        <Image Name="ui_button_setting_yes.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

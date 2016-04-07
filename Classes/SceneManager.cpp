@@ -51,7 +51,7 @@ void SceneManager::switchScene()
 		break;
 
 	case SceneType::en_Select_Tollgate_Scene:
-		scene = SelectTollgateScene::createScene(SELECT_TOLLGATE_SCENE_CSB_FILE);
+		scene = TransitionFade::create(1.0f, SelectTollgateScene::createScene(SELECT_TOLLGATE_SCENE_CSB_FILE));
 		break;
 
 	case SceneType::en_Start_Animation_Scene:
@@ -59,7 +59,7 @@ void SceneManager::switchScene()
 		break;
 
 	case SceneType::en_Tollgate_Scene:
-		scene = TollgateScene::createScene(TOLLGATE_SCENE_CSB_FILE);
+		scene = TransitionFade::create(1.0f, TollgateScene::createScene(TOLLGATE_SCENE_CSB_FILE));
 		break;
 
 	case SceneType::en_Start_Scene:

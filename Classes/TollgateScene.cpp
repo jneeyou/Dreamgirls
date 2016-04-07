@@ -10,12 +10,12 @@
 
 bool TollgateScene::init(const char * filePath)
 {
+	m_scoreLabel = nullptr;
+
 	if (!BaseScene::init(filePath))
 	{
 		return false;
 	}
-
-	m_scoreLabel = nullptr;
 
 	/* Ìí¼ÓµØÍ¼ */
 	int level = getIntFromXML(CURRENT_TOLLGATE,1);
@@ -27,45 +27,62 @@ bool TollgateScene::init(const char * filePath)
 	/* ÒÆ¶¯±³¾° */
 	schedule(schedule_selector(TollgateScene::moveBg));
 
+	/* Ìí¼Ó¼àÌý */
+	auto touchEvent = EventListenerTouchOneByOne::create();
+	touchEvent->onTouchBegan = CC_CALLBACK_2(TollgateScene::onTouchBegan,this);
+	touchEvent->onTouchEnded = CC_CALLBACK_2(TollgateScene::onTouchEnded, this);
+	touchEvent->onTouchMoved = CC_CALLBACK_2(TollgateScene::onTouchMoved, this);
+
 	return true;
+}
+
+bool TollgateScene::onTouchBegan(Touch * touch, Event * unused_event)
+{
+	return true;
+}
+
+void TollgateScene::onTouchMoved(Touch * touch, Event * unused_event)
+{
+}
+
+void TollgateScene::onTouchEnded(Touch * touch, Event * unused_event)
+{
 }
 
 void TollgateScene::setControllerInBgLayer()
 {
 	BaseScene::init();
 
-	auto leftMoveBtn = dynamic_cast<Button*>(bgLayer->getChildByName(TOLLGATE_SCENE_LEFT_MOVE_BTN));
-	auto rightMoveBtn = dynamic_cast<Button*>(bgLayer->getChildByName(TOLLGATE_SCENE_RIGHT_MOVE_BTN));
-	auto jumpBtn = dynamic_cast<Button*>(bgLayer->getChildByName(TOLLGATE_SCENE_JUMP_BTN));
-	auto pauseBtn = dynamic_cast<Button*>(bgLayer->getChildByName(TOLLGATE_SCENE_PAUSE_BTN));
+	rightMoveBtn = dynamic_cast<Button*>(bgLayer->getChildByName(TOLLGATE_SCENE_RIGHT_MOVE_BTN));
+	jumpBtn = dynamic_cast<Button*>(bgLayer->getChildByName(TOLLGATE_SCENE_JUMP_BTN));
+	pauseBtn = dynamic_cast<Button*>(bgLayer->getChildByName(TOLLGATE_SCENE_PAUSE_BTN));
 
 	m_scoreLabel = dynamic_cast<TextBMFont*>(bgLayer->getChildByName(TOLLGATE_SCENE_SCORE_LABEL));
-
-	// ×óÒÆÊÂ¼þ
-	leftMoveBtn->addTouchEventListener([&](Ref* ref, Widget::TouchEventType type) {
-		if (type == Widget::TouchEventType::BEGAN)
-		{
-			PLAY_EFFECT(PATH_RUN_SOUND, false);
-			m_player->runAction(MoveBy::create(0.4f, Vec2(-5, 0)));
-		}
-
-		if (type == Widget::TouchEventType::ENDED)
-		{
-			
-		}
-	});
 
 	// ÓÒÒÆÊÂ¼þ
 	rightMoveBtn->addTouchEventListener([&](Ref* ref, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-			PLAY_EFFECT(PATH_RUN_SOUND, false);
-			m_player->runAction(MoveBy::create(0.4f, Vec2(5, 0)));
-		}
+			PLAY_EFFECT(PATH_RUN_SOUND, true);
+			rightMoveBtn->runAction(ScaleTo::create(0.1f, 1.2f));
 
-		if (type == Widget::TouchEventType::ENDED)
+			m_player->run(false);
+		}
+		else if (type == Widget::TouchEventType::MOVED)
 		{
+			auto ePos = rightMoveBtn->getTouchMovePosition();
+			auto sPos = rightMoveBtn->getPosition();
+			auto dis = sPos.distance(ePos);
 			
+			if (dis > rightMoveBtn->getContentSize().width / 2)
+			{
+				m_player->stopRun();
+			}
+		}
+		else
+		{
+			rightMoveBtn->runAction(ScaleTo::create(0.1f, 1.0f));
+			m_player->stopRun();
 		}
 	});
 
@@ -74,11 +91,13 @@ void TollgateScene::setControllerInBgLayer()
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			PLAY_EFFECT(PATH_JUMP_SOUND, false);
+			jumpBtn->runAction(ScaleTo::create(0.1f, 1.2f));
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
 		{
-
+			m_player->jump(150);
+			jumpBtn->runAction(ScaleTo::create(0.1f, 1.0f));
 		}
 	});
 
@@ -87,11 +106,13 @@ void TollgateScene::setControllerInBgLayer()
 		if (type == Widget::TouchEventType::BEGAN)
 		{
 			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			pauseBtn->runAction(ScaleTo::create(0.1f, 1.1f));
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
 		{
-
+			// ÏÔÊ¾ÔÝÍ£²ã
+			pauseBtn->runAction(ScaleTo::create(0.1f, 1.0f));
 		}
 	});
 
@@ -108,10 +129,9 @@ void TollgateScene::addPlayer(TMXTiledMap * tiledMap)
 	addChild(m_player);
 
 	auto sp = (SkeletonNode*)CSLoader::createNode(PATH_PLAYER_AIMATION_FILE);
-	
+
 	m_player->bindSprite(sp);
-	m_player->setPosition(Vec2(WINSIZE.width / 2, WINSIZE.height / 2));
-	m_player->run();
+	m_player->setPosition(Vec2(20, 30));
 }
 
 void TollgateScene::moveBg(float dt)

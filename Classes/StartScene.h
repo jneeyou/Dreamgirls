@@ -21,6 +21,11 @@ public:
 protected:
 	virtual void setControllerInBgLayer() override;
 
+private:
+	Button* startGameBtn;
+	Button* helpBtn ;
+	Button* settingBtn;
+
 };
 
 #endif // !__START_SCENE_H__
