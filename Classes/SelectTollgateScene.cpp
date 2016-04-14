@@ -1,9 +1,20 @@
 #include "SelectTollgateScene.h"
 #include "SceneManager.h"
+#include "SettingLayer.h"
+
 
 /* 获得当前关卡名 */
-#define GetCurLevelName(m_iCurLevel)	("SltTollgateSceneRes/lv_" + Value(m_iCurLevel).asString() + ".png")
+#define GetCurLevelName(m_iCurLevel)	("lv_" + Value(m_iCurLevel).asString() + ".png")
 
+
+SelectTollgateScene::SelectTollgateScene()
+{
+}
+
+SelectTollgateScene::~SelectTollgateScene()
+{
+	this->removeAllChildrenWithCleanup(true);
+}
 
 bool SelectTollgateScene::init(const char * filePath)
 {
@@ -14,6 +25,16 @@ bool SelectTollgateScene::init(const char * filePath)
 	m_iCurTollgate = 2;
 	m_actionFlag = 0;// 0:无动作，-1：左滑，1：右滑
 	m_touchTime = 0;
+
+	if (!SpriteFrameCache::getInstance()->isSpriteFramesWithFileLoaded(TOLLGATE_MAP_RES_PLIST))
+	{
+		SpriteFrameCache::getInstance()->addSpriteFramesWithFile(TOLLGATE_MAP_RES_PLIST, TOLLGATE_MAP_RES_PICTURE);
+	}
+
+	if (!SpriteFrameCache::getInstance()->isSpriteFramesWithFileLoaded(TOLLGATE_SCENE_RES_PLIST))
+	{
+		SpriteFrameCache::getInstance()->addSpriteFramesWithFile(TOLLGATE_SCENE_RES_PLIST, TOLLGATE_SCENE_RES_PICTURE);
+	}
 
 	if (!BaseScene::init(filePath))
 	{
@@ -62,6 +83,11 @@ void SelectTollgateScene::setControllerInBgLayer()
 	lv_left->setZOrder(0);
 	lv_right->setZOrder(0);
 
+	lv_left->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(GetCurLevelName(m_iCurTollgate - 1)));
+	lv_center->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(GetCurLevelName(m_iCurTollgate)));
+	lv_right->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(GetCurLevelName(m_iCurTollgate + 1)));
+
+
 	slt_bar_yes = dynamic_cast<Sprite*>(bgLayer->getChildByName("sp_slt_bar_no"));
 
 	auto slt_bar_no1 = dynamic_cast<Sprite*>(bgLayer->getChildByName("slt_bar_yes_1"));
@@ -82,7 +108,10 @@ void SelectTollgateScene::setControllerInBgLayer()
 	home_btn->addTouchEventListener([&](Ref* ref, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-			PLAY_EFFECT(PATH_BUTTON_SOUND,false);
+			if (Effect_State)
+			{
+				PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			}
 			home_btn->runAction(ScaleTo::create(0.1f, 1.1f));
 			return;
 		}
@@ -98,7 +127,11 @@ void SelectTollgateScene::setControllerInBgLayer()
 	setting_btn->addTouchEventListener([&](Ref* ref, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			if (Effect_State)
+			{
+				PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			}
+			
 			setting_btn->runAction(ScaleTo::create(0.1f, 1.1f));
 			return;
 		}
@@ -107,6 +140,9 @@ void SelectTollgateScene::setControllerInBgLayer()
 		{
 			/* 弹出设置层 */
 			setting_btn->runAction(ScaleTo::create(0.1f, 1.0f));
+			auto layer = SettingLayer::create();
+			this->addChild(layer);
+			this->addChild(layer->getBgLayer(), 1);
 		}
 	});
 
@@ -175,14 +211,14 @@ void SelectTollgateScene::updateUI(bool isLeftSiding, float tm)
 		
 		/* 中关卡图移动动作 */
 		auto ctMove = MoveTo::create(tm, lv_left->getPosition());
-		auto scale1 = ScaleTo::create(tm / 5, 1.2f);
+		auto scale1 = ScaleTo::create(tm / 5, 1.1f);
 		auto scale2 = ScaleTo::create(tm / 5 * 4, lv_left->getScaleX(),lv_left->getScaleY());
 		auto ctSpawn = Spawn::create(ctMove, Sequence::create(scale1, scale2, nullptr), nullptr);
 		log("pos:%f;l==%f,%f", lv_left->getPositionX(), lv_left->getScaleX(), lv_left->getScaleY());
 
 		/* 右关卡图移动动作 */
 		auto rtMove = MoveTo::create(tm, lv_center->getPosition());
-		auto scale3 = ScaleTo::create(tm / 5 * 4, 1.2f);
+		auto scale3 = ScaleTo::create(tm / 5 * 4, 1.1f);
 		auto scale4 = ScaleTo::create(tm / 5, 1.0f);
 		auto rtSpawn = Spawn::create(rtMove, Sequence::create(scale3, scale4, nullptr), nullptr);
 
@@ -232,7 +268,7 @@ void SelectTollgateScene::updateUI(bool isLeftSiding, float tm)
 
 		/* 中关卡图移动动作 */
 		auto ctMove = MoveTo::create(tm, lv_right->getPosition());
-		auto scale1 = ScaleTo::create(tm / 5, 1.2f);
+		auto scale1 = ScaleTo::create(tm / 5, 1.1f);
 		auto scale2 = ScaleTo::create(tm / 5 * 4, lv_right->getScaleX(), lv_right->getScaleY());
 		auto ctSpawn = Spawn::create(ctMove, Sequence::create(scale1, scale2, nullptr), nullptr);
 
@@ -240,9 +276,9 @@ void SelectTollgateScene::updateUI(bool isLeftSiding, float tm)
 
 		/* 左关卡图移动动作 */
 		auto rtMove = MoveTo::create(tm, lv_center->getPosition());
-		auto scale3 = ScaleTo::create(tm / 5 * 4, 1.2f);
+		auto scale3 = ScaleTo::create(tm / 5 * 4, 1.1f);
 		auto scale4 = ScaleTo::create(tm / 5
-			, 1.0f);
+			, 1.1f);
 		auto rtSpawn = Spawn::create(rtMove, Sequence::create(scale3, scale4, nullptr), nullptr);
 		
 		lv_left->runAction(rtSpawn);
@@ -299,11 +335,26 @@ void SelectTollgateScene::bindTouchListener()
 					updateUI(false, tm);
 					m_actionFlag = 1;
 				}
-
-				PLAY_EFFECT(PATH_SLID_SOUND, false);
+				
+				if (Effect_State)
+				{
+					PLAY_EFFECT(PATH_SLID_SOUND, false);
+				}
 
 				m_touchTime = 0;
 				m_isCountTime = false;
+			}
+			else if (m_ePos.distance(m_sPos) < 3)
+			{
+				auto pos = DIRECTOR->convertToGL(_touch->getLocationInView());
+				if (boundBox.containsPoint(pos))
+				{
+					if (Effect_State)
+					{
+						PLAY_EFFECT(PATH_ENTER_SOUND, false);
+					}
+					enterCurTollgateScene();
+				}
 			}
 			m_isSliding = false;
 		}

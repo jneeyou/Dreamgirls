@@ -9,6 +9,9 @@
 class SelectTollgateScene : public BaseScene
 {
 public:
+	SelectTollgateScene();
+	~SelectTollgateScene();
+
 	CREATE_FUNC_0(SelectTollgateScene, const char);
 	CREATE_SCENE_0(SelectTollgateScene, const char);
 

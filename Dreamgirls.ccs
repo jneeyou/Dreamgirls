@@ -7,7 +7,6 @@
           <Image Name="body.png" />
           <Image Name="foot1.png" />
           <Image Name="foot2.png" />
-          <Image Name="girl.png" />
           <Image Name="hand1.png" />
           <Image Name="hand2.png" />
           <Image Name="head.png" />
@@ -16,64 +15,107 @@
           <Image Name="rhand.png" />
           <Image Name="sfoot.png" />
         </Folder>
+        <Folder Name="PopLayerRes">
+          <Image Name="close.png" />
+          <Image Name="close_dis.png" />
+          <Image Name="help_box.png" />
+          <Image Name="help_btn.png" />
+          <Image Name="open.png" />
+          <Image Name="open_dis.png" />
+          <Image Name="princess_setting_base.png" />
+        </Folder>
         <Folder Name="SltTollgateSceneRes">
+          <Image Name="bg.png" />
           <Image Name="bg_large.png" />
           <Image Name="bg_small.png" />
-          <Image Name="home.png" />
-          <Image Name="lv_1.png" />
-          <Image Name="lv_10.png" />
-          <Image Name="lv_2.png" />
-          <Image Name="lv_3.png" />
-          <Image Name="lv_4.png" />
-          <Image Name="lv_5.png" />
-          <Image Name="lv_6.png" />
-          <Image Name="lv_7.png" />
-          <Image Name="lv_8.png" />
-          <Image Name="lv_9.png" />
           <Image Name="slt_bar_lock.png" />
           <Image Name="slt_bar_no.png" />
           <Image Name="slt_bar_yes.png" />
+          <Image Name="ui_button_home_no.png" />
+          <Image Name="ui_button_home_yes.png" />
+          <Image Name="ui_button_setting_no.png" />
+          <Image Name="ui_button_setting_yes.png" />
+        </Folder>
+        <Folder Name="SplashSceneRes">
+          <Image Name="princess_endpoint_light.png" />
+          <Image Name="princess_over_light.png" />
+          <Image Name="princess_scene_light.png" />
+          <Image Name="splash_bg.png" />
+          <Image Name="ya.png" />
+        </Folder>
+        <Folder Name="StartAnimationRes">
+          <Image Name="bg2.png" />
+          <Image Name="fog_01.png" />
+          <Image Name="fog_02.png" />
+          <Image Name="princess_over_light_01.png" />
+          <Image Name="princess_return_03.png" />
+          <Image Name="sprite30-sheet0.png" />
+          <Image Name="tree-sheet0.png" />
+          <Image Name="wanddeko2-sheet0.png" />
         </Folder>
         <Folder Name="StartSceneRes">
-          <Image Name="bg.png" />
-          <Image Name="helpBtn_normal.png" />
-          <Image Name="helpBtn_press.png" />
-          <Image Name="princess_last.png" />
-          <Image Name="princess_scene_black.png" />
-          <Image Name="setBtn_normal.png" />
-          <Image Name="setBtn_press.png" />
-          <Image Name="startGameBtn_normal.png" />
-          <Image Name="startGameBtn_press.png" />
-          <Image Name="title.png" />
+          <Image Name="help_normal.png" />
+          <Image Name="help_press.png" />
+          <Image Name="menu_bg.png" />
+          <Image Name="set_normal.png" />
+          <Image Name="set_press.png" />
+          <Image Name="star.png" />
+          <Image Name="start_normal.png" />
+          <Image Name="start_press.png" />
         </Folder>
+        <PlistImageFolder Image="StartSceneRes.png" PListFile="StartSceneRes.plist" Name=".StartSceneRes_PList.Dir">
+          <PlistImageFile Name="help_normal.png" Key="help_normal.png" />
+          <PlistImageFile Name="help_press.png" Key="help_press.png" />
+          <PlistImageFile Name="menu_bg.png" Key="menu_bg.png" />
+          <PlistImageFile Name="set_normal.png" Key="set_normal.png" />
+          <PlistImageFile Name="set_press.png" Key="set_press.png" />
+          <PlistImageFile Name="star.png" Key="star.png" />
+          <PlistImageFile Name="start_normal.png" Key="start_normal.png" />
+          <PlistImageFile Name="start_press.png" Key="start_press.png" />
+        </PlistImageFolder>
         <Folder Name="TollgateSceneRes">
+          <Image Name="background.png" />
+          <Image Name="boat.png" />
+          <Image Name="cloud.png" />
+          <Image Name="dandelion.png" />
+          <Image Name="home.png" />
+          <Image Name="info_btn.png" />
+          <Image Name="moon.png" />
+          <Image Name="princess_button_home_2.png" />
+          <Image Name="princess_button_level.png" />
+          <Image Name="princess_button_moon.png" />
+          <Image Name="princess_button_play.png" />
+          <Image Name="princess_button_retry.png" />
+          <Image Name="princess_button_setting.png" />
+          <Image Name="princess_button_share.png" />
+          <Image Name="princess_button_star.png" />
           <Image Name="princess_button_stop.png" />
           <Image Name="princess_button_stops.png" />
-          <Image Name="princess_scene_forest_11.png" />
-          <Image Name="princess_scene_lake_01.png" />
-          <Image Name="princess_scene_temple_01.png" />
-          <Image Name="princess_scene_temple_011.png" />
-          <Image Name="ui_tollgate_jump_btn_normal.png" />
-          <Image Name="ui_tollgate_jump_btn_press.png" />
-          <Image Name="ui_tollgate_left_btn_normal.png" />
-          <Image Name="ui_tollgate_left_btn_press .png" />
-          <Image Name="ui_tollgate_right_btn_normal.png" />
-          <Image Name="ui_tollgate_right_btn_press.png" />
+          <Image Name="set_bg.png" />
+          <Image Name="up.png" />
         </Folder>
-        <Fnt Name="futura-48.fnt" />
+        <Fnt Name="5_more_cd@2x..fnt" />
+        <Project Name="BgLayer.csd" Type="Layer" />
+        <PlistParticleFile Name="chuanyue.plist" />
         <Project Name="girl.csd" Type="Skeleton" />
         <PlistInfo Name="GirlResource.csi" Type="Plist" />
+        <PlistParticleFile Name="guangtuan.plist" />
+        <Project Name="HelpLayer.csd" Type="Node" />
+        <Project Name="LogicLayer.csd" Type="Layer" />
+        <Project Name="MapLayer.csd" Type="Layer" />
+        <Project Name="PauseLayer.csd" Type="Layer" />
+        <PlistInfo Name="PopLayerRes.csi" Type="Plist" />
         <Project Name="SelectTollgateScene.csd" Type="Scene" />
-        <Project Name="Skeleton.csd" Type="Skeleton" />
+        <Project Name="SettingLayer.csd" Type="Layer" />
+        <PlistParticleFile Name="shenghua.plist" />
+        <PlistInfo Name="SltTollgateSceneRes.csi" Type="Plist" />
         <Project Name="SplashScene.csd" Type="Scene" />
+        <PlistInfo Name="SplashSceneRes.csi" Type="Plist" />
         <Project Name="StartAnimationScene.csd" Type="Scene" />
+        <PlistInfo Name="startAnimRes.csi" Type="Plist" />
         <Project Name="StartScene.csd" Type="Scene" />
-        <PlistInfo Name="tollgate_map.csi" Type="Plist" />
         <Project Name="TollgateScene.csd" Type="Scene" />
-        <Image Name="ui_button_home_no.png" />
-        <Image Name="ui_button_home_yes.png" />
-        <Image Name="ui_button_setting_no.png" />
-        <Image Name="ui_button_setting_yes.png" />
+        <PlistInfo Name="TollgateSceneRes.csi" Type="Plist" />
       </RootFolder>
     </Group>
   </SolutionFolder>

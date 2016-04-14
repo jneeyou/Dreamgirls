@@ -151,18 +151,24 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\BaseScene.cpp" />
     <ClCompile Include="..\Classes\CsvData.cpp" />
     <ClCompile Include="..\Classes\CsvUtil.cpp" />
+    <ClCompile Include="..\Classes\HelpLayer.cpp" />
     <ClCompile Include="..\Classes\I18N.cpp" />
     <ClCompile Include="..\Classes\Monster.cpp" />
     <ClCompile Include="..\Classes\MonsterManager.cpp" />
+    <ClCompile Include="..\Classes\PauseLayer.cpp" />
     <ClCompile Include="..\Classes\Player.cpp" />
     <ClCompile Include="..\Classes\SceneManager.cpp" />
     <ClCompile Include="..\Classes\SelectTollgateScene.cpp" />
+    <ClCompile Include="..\Classes\SettingLayer.cpp" />
     <ClCompile Include="..\Classes\SplashScene.cpp" />
     <ClCompile Include="..\Classes\StartAnimationScene.cpp" />
     <ClCompile Include="..\Classes\StartScene.cpp" />
     <ClCompile Include="..\Classes\StringUtil.cpp" />
+    <ClCompile Include="..\Classes\TollgateBgLayer.cpp" />
+    <ClCompile Include="..\Classes\TollgateLogicLayer.cpp" />
+    <ClCompile Include="..\Classes\TollgateMapLayer.cpp" />
     <ClCompile Include="..\Classes\TollgateScene.cpp" />
-    <ClCompile Include="..\Classes\TollgateSplashScene.cpp" />
+    <ClCompile Include="..\Classes\TollgateSplashLayer.cpp" />
     <ClCompile Include="..\Classes\ToolsEntity.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -174,10 +180,11 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\CsvUtil.h" />
     <ClInclude Include="..\Classes\EnumStrKey.h" />
     <ClInclude Include="..\Classes\GlobalDefine.h" />
-    <ClInclude Include="..\Classes\helpLayer.h" />
+    <ClInclude Include="..\Classes\HelpLayer.h" />
     <ClInclude Include="..\Classes\I18N.h" />
     <ClInclude Include="..\Classes\Monster.h" />
     <ClInclude Include="..\Classes\MonsterManager.h" />
+    <ClInclude Include="..\Classes\PauseLayer.h" />
     <ClInclude Include="..\Classes\Player.h" />
     <ClInclude Include="..\Classes\SceneManager.h" />
     <ClInclude Include="..\Classes\SelectTollgateScene.h" />
@@ -186,8 +193,11 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\StartAnimationScene.h" />
     <ClInclude Include="..\Classes\StartScene.h" />
     <ClInclude Include="..\Classes\StringUtil.h" />
+    <ClInclude Include="..\Classes\TollgateBgLayer.h" />
+    <ClInclude Include="..\Classes\TollgateLogicLayer.h" />
+    <ClInclude Include="..\Classes\TollgateMapLayer.h" />
     <ClInclude Include="..\Classes\TollgateScene.h" />
-    <ClInclude Include="..\Classes\TollgateSplashScene.h" />
+    <ClInclude Include="..\Classes\TollgateSplashLayer.h" />
     <ClInclude Include="..\Classes\ToolsEntity.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

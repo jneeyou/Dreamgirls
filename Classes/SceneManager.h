@@ -44,7 +44,10 @@ public:
 
 protected:
 	/* 切换场景 */
-	virtual void switchScene();
+	virtual void switchScene(SceneType type);
+
+	/* 释放资源 */
+	void releaseRes(const SceneType& type);
 
 	/* 当前场景类型 */
 	CC_SYNTHESIZE(SceneType, m_curSceneType, CurSceneType);

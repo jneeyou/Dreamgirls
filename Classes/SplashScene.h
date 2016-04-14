@@ -16,7 +16,7 @@ public:
 
 protected:
 	/* 加载图片资源文件 */
-	virtual void loadPictureResFiles();
+	virtual void loadPictureResFiles(float dt);
 
 	/* 加载音乐资源文件 */
 	virtual void loadAudioResFiles();
@@ -36,6 +36,12 @@ private:
 
 	/* 加载资源计数 */
 	int m_iNumOfLoad;
+
+	/* 动画是否结束 */
+	bool m_isActionDone;
+
+	/* 资源是否加载完成 */
+	bool m_isResLoaded;
 };
 
 #endif // !__SPLASH_SCENE_H__

@@ -1,7 +1,8 @@
 #include "StartScene.h"
 #include "SceneManager.h"
 #include "GlobalDefine.h"
-
+#include "SettingLayer.h"
+#include "HelpLayer.h"
 
 StartScene::StartScene()
 {
@@ -19,9 +20,35 @@ bool StartScene::init(const char* filePath)
 	}
 
 	/* 播放音乐 */
-	PLAY_MUSIC(PATH_BGM_SOUND, true);
+	if (getBoolFromXML(BGM_KEY,true))
+	{
+		PLAY_MUSIC(PATH_BGM_SOUND, true);
+	}
 
+	/* 添加粒子 */
+	auto particle1 = ParticleSystemQuad::create("guangtuan.plist");
+	auto particle2 = ParticleSystemQuad::create("guangtuan.plist");
+	auto particle3 = ParticleSystemQuad::create("chuanyue.plist");
 
+	particle1->setPosition(ccp(WINSIZE.width / 4 - 10, WINSIZE.height / 2));
+	particle2->setPosition(ccp(WINSIZE.width / 4 * 3 + 10, WINSIZE.height / 2));
+	particle3->setPosition(ccp(WINSIZE.width / 2, WINSIZE.height - 100));
+
+	auto batchNode1 = ParticleBatchNode::createWithTexture(particle1->getTexture());
+	auto batchNode2 = ParticleBatchNode::createWithTexture(particle3->getTexture());
+
+	batchNode1->addChild(particle1);
+	batchNode1->addChild(particle2);
+	batchNode2->addChild(particle3);
+
+	this->addChild(batchNode1);
+	this->addChild(batchNode2);
+
+	if (!SpriteFrameCache::getInstance()->isSpriteFramesWithFileLoaded(TOLLGATE_MAP_RES_PLIST))
+	{
+		//SpriteFrameCache::getInstance()->addSpriteFramesWithFile(TOLLGATE_MAP_RES_PLIST, TOLLGATE_MAP_RES_PICTURE);
+	}
+	
 	return true;
 }
 
@@ -41,28 +68,21 @@ void StartScene::setControllerInBgLayer()
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			if (Effect_State)
+			{
+				PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			}
+			
 			startGameBtn->runAction(ScaleTo::create(0.1f, 1.1f));
 		}
 
 		if (type == Widget::TouchEventType::ENDED)
 		{
-			/* 第一次进入跳到开始动画场景，否则跳到关卡场景 */
-			bool ret = getBoolFromXML(USER_FIRST_ENTER, false);
 			startGameBtn->runAction(ScaleTo::create(0.1f, 1.0f));
 			this->runAction(DelayTime::create(0.1f));
 
-			if (!ret)	//第一次进入
-			{
-				setBoolToXML(USER_FIRST_ENTER, true);
-				USERDEFAULT->flush();
-
-				SceneManager::getInstance()->changeCurSceneType(SceneType::en_Start_Animation_Scene);
-			}
-			else		//非第一次
-			{
-				SceneManager::getInstance()->changeCurSceneType(SceneType::en_Select_Tollgate_Scene);
-			}
+			/* 跳到选关场景 */
+			SceneManager::getInstance()->changeCurSceneType(SceneType::en_Select_Tollgate_Scene);
 		}
 		
 	});
@@ -72,7 +92,10 @@ void StartScene::setControllerInBgLayer()
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			if (Effect_State)
+			{
+				PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			}
 			helpBtn->runAction(ScaleTo::create(0.1f, 1.1f));
 		}
 
@@ -80,6 +103,9 @@ void StartScene::setControllerInBgLayer()
 		{
 			/* 弹出帮助层 */
 			helpBtn->runAction(ScaleTo::create(0.1f, 1.0f));
+			auto layer = HelpLayer::create();
+			layer->setTextByCsv(PATH_I18N_PUBLIC, en_StrKey_Public_Help);
+			this->addChild(layer,2);
 		}
 
 	});
@@ -89,7 +115,10 @@ void StartScene::setControllerInBgLayer()
 		/* 播放音效 */
 		if (type == Widget::TouchEventType::BEGAN)
 		{
-			PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			if (Effect_State)
+			{
+				PLAY_EFFECT(PATH_BUTTON_SOUND, false);
+			}
 			settingBtn->runAction(ScaleTo::create(0.1f, 1.1f));
 		}
 
@@ -97,6 +126,9 @@ void StartScene::setControllerInBgLayer()
 		{
 			/* 弹出设置层 */
 			settingBtn->runAction(ScaleTo::create(0.1f, 1.0f));
+			auto layer = SettingLayer::create();
+			this->addChild(layer);
+			this->addChild(layer->getBgLayer(), 2);
 		}
 
 	});

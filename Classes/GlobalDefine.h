@@ -113,7 +113,7 @@ public: static _TYPE_* getInstance() {\
 #define PATH_SLID_SOUND			"sound/sliding.mp3"
 #define PATH_ENTER_SOUND		"sound/enter.mp3"
 #define PATH_CEASH_SOUND		"sound/crash.mp3"
-
+#define PATH_ST_ANIM_SOUND		"sound/home.mp3"
 
 /* ----------------------------------- 存取数据 ------------------------------------------------ */
 
@@ -127,6 +127,8 @@ public: static _TYPE_* getInstance() {\
 #define getFloatFromXML(key,value) UserDefault::getInstance()->getFloatForKey(key,value)
 #define getIntFromXML(key,value) UserDefault::getInstance()->getIntegerForKey(key,value)
 
+/* 音效状态 */
+static bool Effect_State = getBoolFromXML(SOUND_EFFECT_KEY, true);
 
 /* ---------------------------------- 用户信息 ----------------------------------------------- */
 
@@ -164,12 +166,26 @@ public: static _TYPE_* getInstance() {\
 #define  RADIO_BTN_NORMAL	"sprite/Read_CheckBoxBg.png"
 
 /* plist 文件 */
-#define PATH_LEVEL_RES_PLIST_FILE		"pnglist/tollgate_map.plist"
-#define PATH_GIRLS_RES_PLIST_FILE		"pnglist/GirlResource.plist"
+#define TOLLGATE_MAP_RES_PLIST			"tollgate_maps.plist"
+#define SLT_TOLLGATE_SCENE_RES_PLIST	"SltTollgateSceneRes.plist"
+#define GIRL_RES_PLIST					"GirlResource.plist"
+#define POP_LAYER_RES_PLIST				"PopLayerRes.plist"
+#define TOLLGATE_SCENE_RES_PLIST		"TollgateSceneRes.plist"
+#define START_SCENE_RES_PLIST		    "StartSceneRes.plist"
+#define STARTE_ANIM_RES_PLIST		    "startAnimRes.plist"
+#define SPLASH_SCENE_RES_PLIST			"SplashSceneRes.plist"
+
 
 /*plist对应图片 */
-#define PATH_LEVEL_RES_PICTURE_FILE		"pnglist/tollgate_map.png"
-#define PATH_GIRLS_RES_PICTURE_FILE		"pnglist/GirlResource.png"
+#define TOLLGATE_MAP_RES_PICTURE		"tollgate_maps.pvr.ccz"
+#define SLT_TOLLGATE_SCENE_RES_PICTURE	"SltTollgateSceneRes.png"
+#define GIRL_RES_PICTURE				"GirlResource.png"
+#define POP_LAYER_RES_PICTURE			"PopLayerRes.png"
+#define TOLLGATE_SCENE_RES_PICTURE		"TollgateSceneRes.png"
+#define START_SCENE_RES_PICTURE		    "StartSceneRes.png"
+#define STARTE_ANIM_RES_PICTURE			"startAnimRes.png"
+#define SPLASH_SCENE_RES_PICTURE		"SplashSceneRes.png"
+
 
 /* 动画文件 */
 #define PATH_PLAYER_AIMATION_FILE		"girl.csb"
@@ -183,6 +199,9 @@ public: static _TYPE_* getInstance() {\
 #define START_ANIMATION_SCENE_CSB_FILE				"StartAnimationScene.csb"
 #define SELECT_TOLLGATE_SCENE_CSB_FILE				"SelectTollgateScene.csb"
 
+#define SETTING_LAYER_CSB_FILE						"SettingLayer.csb"
+#define PAUSE_LAYER_CSB_FILE						"PauseLayer.csb"
+#define HELP_LAYER_CSB_FILE							"HelpLayer.csb"
 
 
 /* ---------------------------------- 场景控件名 -------------------------------------------- */
@@ -193,28 +212,34 @@ public: static _TYPE_* getInstance() {\
 #define START_SCENE_SETTING_BTN			"settingBtn"
 
 /* 关卡场景 */
-#define TOLLGATE_SCENE_LEFT_MOVE_BTN	"leftMoveBtn"
-#define TOLLGATE_SCENE_RIGHT_MOVE_BTN	"rightMoveBtn"
-#define TOLLGATE_SCENE_JUMP_BTN			"jumpBtn"
-#define TOLLGATE_SCENE_PAUSE_BTN		"pauseBtn"
-#define TOLLGATE_SCENE_SCORE_LABEL		"scoreLabel"
-#define TOLLGATE_SCENE_BG_LAYER_1		"bg"
+#define TOLLGATE_SCENE_LOGIC_LAYER		"logicLayer"
+#define TOLLGATE_SCENE_BG_LAYER		     "bgLayer"
+
+#define TOLL_LOGIC_LAYER_RIGHT_MOVE_BTN	"rightMoveBtn"
+#define TOLL_LOGIC_LAYER_JUMP_BTN		"jumpBtn"
+#define TOLL_LOGIC_LAYER_PAUSE_BTN		"pauseBtn"
+#define TOLL_LOGIC_LAYER_SCORE_LABEL	"scoreLabel"
+
+#define TOLL__BG_LAYER_BG_ONE			"bg_one"
+#define TOLL__BG_LAYER_BG_TWO			"bg_two"
 
 /* -------------------------------------------- 消息定义 ---------------------------------- */
 
-#define USER_LOGIN_MSG			"UserLoginMsg"
-#define USER_SIGNUP_MSG			"UserSignUpMsg"
-#define USER_SMS_CHECK_MSG		"UserSmsCheckMsg"
-#define USER_EMAIL_CHECK_MSG	"UserSmsCheckMsg"
+#define TAG_START_MOVE_BG_MSG			"start_move_bg"
+#define TAG_STOP_MOVE_BG_MSG			"stop_move_bg"
 
-#define USER_LOGIN_FAILED		"UserLoginFailed"
-#define USER_SIGNUP_FAILED		"signUpFailed"
-#define USER_SMS_CHECK_FAILED	"UserSmsCheckFailed"
-#define USER_EMAIL_CHECK_FAILED	"UserSmsCheckFailed"
-
-
-#define TAG_READ_LAYER	1
-#define TAG_PLAY_GAME_LAYER	2
-#define TAG_CHAT_LAYER	3
+/* -------------------------------------------- 地图资源 ---------------------------------- */
+#define LV_1_RES_1						"level/lv_1_res.pvr.ccz"
+#define LV_1_RES_2						"level/river.png"
+#define LV_1_RES_3						"level/dd.png"
+#define LV_2_RES_1						"level/roadPlist.png"
+#define LV_3_RES_1						"level/road3.png"
+#define LV_4_RES_1						"level/tile.png"
+#define LV_5_RES_1						"level/tile.png"
+#define LV_6_RES_1						"level/tile.png"
+#define LV_7_RES_1						"level/tile.png"
+#define LV_8_RES_1						"level/tile.png"
+#define LV_9_RES_1						"level/tile.png"
+#define LV_10_RES_1						"level/tile.png"
 
 #endif // !__GLOBAL_DEFINE_H__

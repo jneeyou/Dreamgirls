@@ -82,6 +82,14 @@ void BaseEntity::bindSprite(SkeletonNode* sprite)
 	onBindSprite();
 }
 
+bool BaseEntity::isCollide(BaseEntity*  obj)
+{
+	auto pos = getPosition();
+	auto box = obj->getBoundingBox();
+
+	return box.containsPoint(pos);
+}
+
 void BaseEntity::setEntityStatus(EntityStatus status)
 {
 	m_entityStatus = status;

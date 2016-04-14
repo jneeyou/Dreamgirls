@@ -79,9 +79,6 @@
     <Filter Include="src\追梦女孩\国际化">
       <UniqueIdentifier>{8a262281-ef44-40cb-8292-875d960e3cc0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\追梦女孩\场景\关卡过渡场景">
-      <UniqueIdentifier>{91d73f15-69ee-49ce-9639-d9fb053559bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\追梦女孩\实体\管理器">
       <UniqueIdentifier>{5515d598-a85a-479d-ba30-0f750d06c294}</UniqueIdentifier>
     </Filter>
@@ -93,6 +90,18 @@
     </Filter>
     <Filter Include="src\追梦女孩\实体\管理器\道具管理器">
       <UniqueIdentifier>{49c7dbdb-bb5d-4bdf-9961-71a5d4de368d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\关卡场景\关卡逻辑层">
+      <UniqueIdentifier>{d4615240-442e-4569-8f92-001d40d69d10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\关卡场景\关卡背景层">
+      <UniqueIdentifier>{0bef8562-5661-49a4-90ba-5735d5d7bbbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\关卡场景\关卡地图层">
+      <UniqueIdentifier>{dd51b7ef-4f4a-4c8a-966d-73fd83612bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\追梦女孩\场景\关卡过渡层">
+      <UniqueIdentifier>{91d73f15-69ee-49ce-9639-d9fb053559bf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -147,11 +156,29 @@
     <ClCompile Include="..\Classes\ToolsEntity.cpp">
       <Filter>src\追梦女孩\实体\道具</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\TollgateSplashScene.cpp">
-      <Filter>src\追梦女孩\场景\关卡过渡场景</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\MonsterManager.cpp">
       <Filter>src\追梦女孩\实体\管理器\怪物管理器</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateLogicLayer.cpp">
+      <Filter>src\追梦女孩\场景\关卡场景\关卡逻辑层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateBgLayer.cpp">
+      <Filter>src\追梦女孩\场景\关卡场景\关卡背景层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateMapLayer.cpp">
+      <Filter>src\追梦女孩\场景\关卡场景\关卡地图层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TollgateSplashLayer.cpp">
+      <Filter>src\追梦女孩\场景\关卡过渡层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SettingLayer.cpp">
+      <Filter>src\追梦女孩\场景\场景层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PauseLayer.cpp">
+      <Filter>src\追梦女孩\场景\场景层</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelpLayer.cpp">
+      <Filter>src\追梦女孩\场景\场景层</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,9 +205,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\GlobalDefine.h">
       <Filter>src\追梦女孩\全局参数</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\helpLayer.h">
-      <Filter>src\追梦女孩\场景\场景层</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\I18N.h">
       <Filter>src\追梦女孩\国际化</Filter>
@@ -218,11 +242,26 @@
     <ClInclude Include="..\Classes\ToolsEntity.h">
       <Filter>src\追梦女孩\实体\道具</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\TollgateSplashScene.h">
-      <Filter>src\追梦女孩\场景\关卡过渡场景</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\MonsterManager.h">
       <Filter>src\追梦女孩\实体\管理器\怪物管理器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PauseLayer.h">
+      <Filter>src\追梦女孩\场景\场景层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelpLayer.h">
+      <Filter>src\追梦女孩\场景\场景层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateBgLayer.h">
+      <Filter>src\追梦女孩\场景\关卡场景\关卡背景层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateLogicLayer.h">
+      <Filter>src\追梦女孩\场景\关卡场景\关卡逻辑层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateMapLayer.h">
+      <Filter>src\追梦女孩\场景\关卡场景\关卡地图层</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TollgateSplashLayer.h">
+      <Filter>src\追梦女孩\场景\关卡过渡层</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

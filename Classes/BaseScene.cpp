@@ -10,6 +10,7 @@ BaseScene::~BaseScene()
 {
 	/* 取消所有消息服务 */
 	NotificationCenter::getInstance()->removeAllObservers(this);
+	this->removeAllChildrenWithCleanup(true);
 }
 
 
@@ -63,3 +64,10 @@ void BaseScene::setControllerInBgLayer()
 
 	/* 设置控件 */
 }
+
+void BaseScene::onEnter()
+{
+	Layer::onEnter();                                                                 
+
+}
+

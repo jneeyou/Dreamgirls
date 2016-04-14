@@ -8,6 +8,9 @@
 #define JUMP_ANIMATION_NAME		"jump"
 #define CATCH_ANIMATION_NAME	"catch"
 
+/* 地图层 */
+#define META_LAYER	"road"
+
 Player::Player()
 {
 	m_curWalkDistance = 0;
@@ -32,9 +35,10 @@ bool Player::init(const char * csvFilePath)
 	m_isRebound = false;
 	runTime = 0;
 	jumpTime = 0;
+	m_isRunning = false;
 
 	/* 通过配置文件设置属性 */
-	setPlayerProperties(csvFilePath);
+	setPlayerProperties(1,csvFilePath);
 
 	/* 获取动画 */
 	loadPlayerAnimation(PATH_PLAYER_AIMATION_FILE);
@@ -66,17 +70,27 @@ void Player::run(bool isLeft)
 	}
 
 	/* 移动位置 */
-	movePos(runTime, 80);
-
+	movePos(runTime, m_speed);
+	m_isRunning = true;
 	m_entityStatus = BaseEntity::EntityStatus::en_Run_Status;
+
+	this->scheduleUpdate();
+	NOTIFY->postNotification(TAG_START_MOVE_BG_MSG,(Ref*)TAG_START_MOVE_BG_MSG);
 }
 
 void Player::stopRun()
 {
+	m_isRunning = false;
 	AUDIOENGINE->stopAllEffects();
-	m_timeline->gotoFrameAndPause(0);
-	this->stopAllActions();
-	m_entityStatus = BaseEntity::EntityStatus::en_Stop_Status;
+	
+	if (m_entityStatus != BaseEntity::EntityStatus::en_Jump_Status)
+	{
+		this->stopAllActions();
+		m_timeline->gotoFrameAndPause(0);
+		m_entityStatus = BaseEntity::EntityStatus::en_Stop_Status;
+		this->unscheduleUpdate();
+		NOTIFY->postNotification(TAG_STOP_MOVE_BG_MSG, (Ref*)TAG_STOP_MOVE_BG_MSG);
+	}
 }
 
 void Player::onWalk()
@@ -93,7 +107,6 @@ void Player::jump(int high)
 	this->stopAllActions();
 	m_timeline->gotoFrameAndPause(0);
 
-
 	if (m_timeline->IsAnimationInfoExists(JUMP_ANIMATION_NAME))
 	{
 		auto animInfo = m_timeline->getAnimationInfo(JUMP_ANIMATION_NAME);
@@ -105,12 +118,27 @@ void Player::jump(int high)
 		auto call = CallFunc::create([&]() {
 			m_entityStatus = BaseEntity::EntityStatus::en_Stop_Status;
 			this->stopAllActions();
+			this->unscheduleUpdate();
+			NOTIFY->postNotification(TAG_STOP_MOVE_BG_MSG, (Ref*)TAG_STOP_MOVE_BG_MSG);
+
+			if (m_isRunning)
+			{
+				run(false);
+				return;
+			}
+
 		});
 
 		this->runAction(Sequence::create(jumpBy,call,nullptr));
+
+		if (!this->isScheduled(schedule_selector(Player::update)))
+		{
+			this->scheduleUpdate();
+		}
 	}
 
 	m_entityStatus = BaseEntity::EntityStatus::en_Jump_Status;
+	NOTIFY->postNotification(TAG_START_MOVE_BG_MSG, (Ref*)TAG_START_MOVE_BG_MSG);
 }
 
 void Player::setViewPointByPlayer()
@@ -120,7 +148,7 @@ void Player::setViewPointByPlayer()
 		return;
 	}
 
-	Layer* parent = (Layer*)getParent();	//player的parent为地图
+	auto parent = getParent();	//player的parent为地图
 
 	/* 地图方块数量 */
 	Size mapTiledNum = m_map->getMapSize();
@@ -161,10 +189,17 @@ void Player::setViewPointByPlayer()
 
 void Player::setTagPosition(int x, int y)
 {
+	if (m_metaLayer == nullptr)
+	{
+		/* 以主角为中心移动地图 */
+		setViewPointByPlayer();
+		return;
+	}
+
 	/* ------------------ 判断前面是否可以通行 ----------------------- */
 
 	/* 取主角前方坐标 */
-	Size spriteSize = m_sprite->getContentSize();
+	Size spriteSize = this->getContentSize();
 	Point dstPos = Point(x + spriteSize.width / 2, y);
 
 	/* 获取主角当前前方坐标在地图中的格子位置 */
@@ -179,64 +214,75 @@ void Player::setTagPosition(int x, int y)
 		/* 获取该地图格子所有属性 */
 		Value properties = m_map->getPropertiesForGID(tiledGid);
 
-		ValueMap propertiesMap = properties.asValueMap();
-
-		if (propertiesMap.find("Collidable") != propertiesMap.end())
+		if (!properties.isNull())
 		{
-			/* 获取格子的Collidable属性 */
-			Value prop = propertiesMap.at("Collidable");
+			ValueMap propertiesMap = properties.asValueMap();
 
-			/* 判断Collidable是否为true，是则不让玩家移动 */
-			if (prop.asString().compare("true") == 0 && m_isRebound == false)
+			if (propertiesMap.find("Collidable") != propertiesMap.end())
 			{
-				m_isRebound = true;
+				/* 获取格子的Collidable属性 */
+				Value prop = propertiesMap.at("Collidable");
 
-				auto jumpBy = JumpBy::create(0.5f, Point(-100, 0), 80, 1);
-				CallFunc* callFunc = CallFunc::create([&]() {
-					/* 恢复状态 */
-					m_isRebound = false;
-				});
+				/* 判断Collidable是否为true，是则不让玩家移动 */
+				if (prop.asString().compare("true") == 0 && m_isRebound == false)
+				{
+					m_isRebound = true;
 
-				/* 执行动作 */
-				auto actions = Sequence::create(jumpBy, callFunc, NULL);
-				this->runAction(actions);
+					auto jumpBy = JumpBy::create(0.5f, Point(-100, 0), 80, 1);
+					CallFunc* callFunc = CallFunc::create([&]() {
+						/* 恢复状态 */
+						m_isRebound = false;
+					});
 
-				return;
+					/* 执行动作 */
+					auto actions = Sequence::create(jumpBy, callFunc, NULL);
+					this->runAction(actions);
+
+					return;
+				}
 			}
-		}
 
-		if (propertiesMap.find("food") != propertiesMap.end())
-		{
-			/* 取得格子food属性，如果是food，让food消失 */
-			Value prop = propertiesMap.at("food");
-			if (prop.asString().compare("true") == 0)
+			if (propertiesMap.find("food") != propertiesMap.end())
 			{
-				/* 从障碍物物层清除当前格子物品 */
-				TMXLayer* barrier = m_map->getLayer("barrier");
-				barrier->removeTileAt(tiledPos);
+				/* 取得格子food属性，如果是food，让food消失 */
+				Value prop = propertiesMap.at("food");
+				if (prop.asString().compare("true") == 0)
+				{
+					/* 从障碍物物层清除当前格子物品 */
+					experimental::TMXLayer* barrier = m_map->getLayer("barrier");
+					barrier->removeTileAt(tiledPos);
+				}
 			}
-		}
 
-		if (propertiesMap.find("win") != propertiesMap.end())
-		{
-			/* 取得格子win属性，如果是win，则游戏结束 */
-			Value prop = propertiesMap.at("win");
-			if (prop.asString().compare("true") == 0)
+			if (propertiesMap.find("win") != propertiesMap.end())
 			{
-				/* 跳到胜利场景 */
-				//SceneManager::getInstance()->changeCurSceneType(SceneType::en_Tollgate_Scene);
+				/* 取得格子win属性，如果是win，则游戏结束 */
+				Value prop = propertiesMap.at("win");
+				if (prop.asString().compare("true") == 0)
+				{
+					/* 跳到胜利场景 */
+					//SceneManager::getInstance()->changeCurSceneType(SceneType::en_Tollgate_Scene);
+				}
 			}
 		}
 	}
 
-	setPosition(x, y);
+	//setPosition(x, y);
 
 	/* 以主角为中心移动地图 */
 	setViewPointByPlayer();
 }
 
-void Player::setTiedMap(TMXTiledMap * map)
+void Player::setTiedMap(experimental::TMXTiledMap * map)
 {
+	m_map = map;
+	m_metaLayer = map->getLayer(META_LAYER);
+}
+
+void Player::update(float dt)
+{
+	//setViewPointByPlayer();
+	setTagPosition(getPositionX(),getPositionY());
 }
 
 void Player::onCatch()
@@ -272,6 +318,7 @@ void Player::onBindSprite()
 void Player::loadPlayerAnimation(const std::string fileName)
 {
 	m_timeline = CSLoader::createTimeline(fileName);
+	m_timeline->setTimeSpeed(1);
 	m_timeline->retain();
 
 	auto anim = m_timeline->getAnimationInfo(RUN_ANIMATION_NAME);
@@ -282,22 +329,22 @@ void Player::loadPlayerAnimation(const std::string fileName)
 
 }
 
-void Player::setPlayerProperties(const char* csvFilePath)
+void Player::setPlayerProperties(int iRow,const char* csvFilePath)
 {
-	m_id = CsvUtil::getInstance()->getInt(1, 1, csvFilePath);
-	m_modelId = CsvUtil::getInstance()->getInt(1, 2, csvFilePath);
-	m_entityName = CsvUtil::getInstance()->getString(1, 3, csvFilePath);
-	m_level = CsvUtil::getInstance()->getInt(1, 4, csvFilePath);
-	m_lifeValue = CsvUtil::getInstance()->getInt(1, 5, csvFilePath);
-	m_speed = CsvUtil::getInstance()->getFloat(1, 6, csvFilePath);
-	m_defense = CsvUtil::getInstance()->getFloat(1, 7, csvFilePath);
-	m_curAct = CsvUtil::getInstance()->getInt(1, 8, csvFilePath);
+	m_id = CsvUtil::getInstance()->getInt(iRow, 1, csvFilePath);
+	m_modelId = CsvUtil::getInstance()->getInt(iRow, 2, csvFilePath);
+	m_entityName = CsvUtil::getInstance()->getString(iRow, 3, csvFilePath);
+	m_level = CsvUtil::getInstance()->getInt(iRow, 4, csvFilePath);
+	m_lifeValue = CsvUtil::getInstance()->getInt(iRow, 5, csvFilePath);
+	m_speed = CsvUtil::getInstance()->getFloat(iRow, 6, csvFilePath);
+	m_defense = CsvUtil::getInstance()->getFloat(iRow, 7, csvFilePath);
+	m_curAct = CsvUtil::getInstance()->getInt(iRow, 8, csvFilePath);
 }
 
 void Player::movePos(float dt,float dis)
 {
 	auto call = CallFunc::create([&]() {
-		movePos(runTime, 80);
+		movePos(runTime, m_speed);
 	});
 	MoveBy* move = nullptr;
 

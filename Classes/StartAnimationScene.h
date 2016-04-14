@@ -13,6 +13,9 @@ public:
 	CREATE_SCENE_0(StartAnimationScene, const char);
 
 	virtual bool init(const char* filePath) override;
+
+protected:
+	virtual void setControllerInBgLayer()override;
 };
 
 #endif // !__START_ANIMATION_SCENE_H__

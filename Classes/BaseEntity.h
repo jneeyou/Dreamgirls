@@ -45,6 +45,9 @@ public:
 	/* 绑定精灵 */
 	void bindSprite(SkeletonNode* sprite);
 
+	/* 碰撞检测 */
+	virtual bool isCollide(BaseEntity* obj);
+
 protected:
 	/* 移动位置 */
 	virtual void movePos(float dt, float dis);

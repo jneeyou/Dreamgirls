@@ -6,7 +6,7 @@
         <LuaEncryptKey Value="" />
         <LuaEncryptSign Value="" />
         <Android_PackageName Value="org.cocos.Dreamgirls" />
-        <AndroidkeyStore Value="D:\Documents\Cocos\CocosProjects\publish\jneeyou.keystore" />
+        <AndroidkeyStore Value="D:\Documents\Cocos\CocosProjects\publish\org.cocos.jneeyou.keystore" />
         <AndroidVersion Value="android-20" />
         <iOS_Target Value="Dreamgirls-mobile" />
         <iOS_BundleID Value="" />
@@ -24,7 +24,7 @@
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
-        <IsLastPublish Value="False" />
+        <IsLastPublish Value="True" />
         <LastRunType Value="Windows" />
       </Value>
     </Item>

@@ -19,13 +19,13 @@ public:
 
 	void loadFile(const char* filePath);	/* 加载配置文件 */
 
-	Value getValue(int iRor, int iCol, const char* csvFilePath);				/* 获取某行某列的值 */
-	const std::string getString(int iRor, int iCol, const char* csvFilePath);	/* 获取值并转换为字符串 */
-	const int getInt(int iRor, int iCol, const char* csvFilePath);				/* 获取值并转换为整型值 */
-	const float getFloat(int iRor, int iCol, const char* csvFilePath);			/* 获取值并转换为float值 */
-	const bool getBool(int iRor, int iCol, const char* csvFilePath);			/* 获取值并转换为bool值 */
-	const double getDouble(int iRor, int iCol, const char* csvFilePath);		/* 获取值并转换为double值 */
-	const char getByte(int iRor, int iCol, const char* csvFilePath);			/* 获取值并转换为Byte值 */
+	Value getValue(int iRow, int iCol, const char* csvFilePath);				/* 获取某行某列的值 */
+	const std::string getString(int iRow, int iCol, const char* csvFilePath);	/* 获取值并转换为字符串 */
+	const int getInt(int iRow, int iCol, const char* csvFilePath);				/* 获取值并转换为整型值 */
+	const float getFloat(int iRow, int iCol, const char* csvFilePath);			/* 获取值并转换为float值 */
+	const bool getBool(int iRow, int iCol, const char* csvFilePath);			/* 获取值并转换为bool值 */
+	const double getDouble(int iRow, int iCol, const char* csvFilePath);		/* 获取值并转换为double值 */
+	const char getByte(int iRow, int iCol, const char* csvFilePath);			/* 获取值并转换为Byte值 */
 
 	const Size getFileRowColNum(const char* csvFilePath);						/* 获取csv文件行列数 */	
 

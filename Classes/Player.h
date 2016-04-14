@@ -8,6 +8,9 @@
 
 using namespace cocostudio::timeline;
 
+typedef experimental::TMXTiledMap ETMXTileMap;
+typedef experimental::TMXLayer ETMXLayer;
+
 /************************************************* 玩家类 **********************************************/
 
 class Player : public BaseEntity
@@ -37,7 +40,9 @@ public:
 	virtual void setTagPosition(int x, int y);
 
 	/* 设置地图 */
-	void setTiedMap(TMXTiledMap* map);
+	void setTiedMap(experimental::TMXTiledMap* map);
+
+	void update(float dt);
 
 protected:
 	/* 走 */
@@ -66,7 +71,7 @@ protected:
 	void loadPlayerAnimation(const std::string fileName);
 
 	/* 设置玩家属性 */
-	void setPlayerProperties(const char* csvFilePath);
+	void setPlayerProperties(int iRow,const char* csvFilePath);
 
 	/* 移动位置 */
 	void movePos(float dt, float dis);
@@ -91,16 +96,19 @@ private:
 	bool m_isRebound;
 
 	/* 地图 */
-	TMXTiledMap* m_map;
+	experimental::TMXTiledMap* m_map;
 
 	/* 碰撞检测层 */
-	TMXLayer* m_metaLayer;
+	experimental::TMXLayer* m_metaLayer;
 		
 	/* 跑动时间 */
 	float runTime;
 
 	/* 跳跃时间 */
 	float jumpTime;
+
+	/* 是否在跑 */
+	bool m_isRunning;
 
 };
 

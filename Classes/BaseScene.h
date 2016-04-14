@@ -29,6 +29,8 @@ protected:
 	/* 设置背景层控件,子类实现 */
 	virtual void setControllerInBgLayer();
 
+	virtual void onEnter() override;
+
 protected:
 	Node* bgLayer;	// 背景层
 };

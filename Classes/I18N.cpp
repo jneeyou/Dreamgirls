@@ -33,21 +33,39 @@ bool I18N::init()
 
 const char * I18N::getcString(EnumStrKey enStrKey)
 {
+	log("here");
+
+	if (enStrKey > m_StringMap.size())
+	{
+		return "";
+	}
 	return m_StringMap.at(enStrKey).c_str();
 }
 
 const char * I18N::getcStringByKey(int iKey)
 {
+	if (iKey > m_StringMap.size())
+	{
+		return "";
+	}
 	return m_StringMap.at(iKey).c_str();
 }
 
 const std::string I18N::getsString(EnumStrKey enStrKey)
 {
+	if (enStrKey > m_StringMap.size())
+	{
+		return "";
+	}
 	return m_StringMap.at(enStrKey);
 }
 
 const std::string I18N::getsStringByKey(int iKey)
 {
+	if (iKey > m_StringMap.size())
+	{
+		return "";
+	}
 	return m_StringMap.at(iKey);
 }
 
@@ -70,9 +88,9 @@ void I18N::loadStringsFromConf(const char * filePath)
 	/* 将配置文件中所有字符串存到字典中（忽略第一行）*/
 	for (int i = 1; i < iRowNum; i++)
 	{
-		int key = CsvUtil::getInstance()->getInt(i, 0, filePath);
-		std::string value = CsvUtil::getInstance()->getString(i, 1, filePath);
-		log("%s", value.c_str());
+		int key = CsvUtil::getInstance()->getInt(i, 1, filePath);
+		std::string value = CsvUtil::getInstance()->getString(i, 2, filePath);
+		log("data:%s", value.c_str());
 		m_StringMap[key] = value;
 	}
 }

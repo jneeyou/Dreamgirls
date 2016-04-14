@@ -7,10 +7,8 @@ enum EnumStrKey
 	en_none,						/* 枚举值不小于空值 */
 
 	/* 公共字符串key值 */
-	en_StrKey_Pblic_StartGame = 1,	/* 1: 开始游戏 */
-	en_StrKey_Public_QuwanTeam = 2,	/* 2:短信模板名：趣玩团队 */
-	en_StrKey_Public_Boy = 3,		/* 3:男 */
-	en_StrKey_Public_Girl = 4,		/* 4:女 */
+	en_StrKey_Pblic_About = 1,	/* 1: 关于 */
+	en_StrKey_Public_Help = 2,	/* 2:帮助 */
 
 	en_max,							/* 枚举值不超过最大值 */
 };
